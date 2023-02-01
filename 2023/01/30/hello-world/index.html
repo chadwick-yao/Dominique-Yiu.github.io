@@ -3,12 +3,12 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Hello World | Hexo</title>
-        <meta name="author" content="John Doe">
+        <title>Hello World | 跬步千里</title>
+        <meta name="author" content="Dominique Yiu">
         <meta name="description" content="">
         <meta name="keywords" content="">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
-        <link rel="icon" href="/null">
+        <link rel="icon" href="/images/avatar.jpg">
         <script src="https://cdn.staticfile.org/vue/3.2.45/vue.global.prod.min.js"></script>
         <script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
         <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css">
@@ -17,18 +17,22 @@
         <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
         
         
+        <script src="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.js"></script>
+        <script src="https://cdn.staticfile.org/KaTeX/0.16.4/contrib/auto-render.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.css">
+        
         
         <link rel="stylesheet" href="/css/fonts.min.css">
         <link rel="stylesheet" href="/css/particlex.css">
+        <link rel="stylesheet" href="/css/mouse.css">
     <meta name="generator" content="Hexo 6.3.0"></head>
     <body>
         <div id="loading" style="height: 100vh; width: 100vw; left: 0; top: 0; position: fixed; display: flex; z-index: 2147483647; justify-content: space-between; background: #fff; transition: opacity 0.3s ease-out, visibility 0.3s; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none">
     <div style="position: fixed; height: 100vh; width: 100vw; display: flex; justify-content: center; align-items: center">
         <div id="loadcontent" style="width: 50vmin; height: 50vmin; padding: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; border: solid 10px #a3ddfb; text-align: center">
             <div>
-                <h2>LOADING...</h2>
-                <p style="word-break: keep-all">加载过慢请开启缓存（浏览器默认开启）</p>
-                <img alt="loading" src="/images/loading.gif" style="height: 50px">
+                <h1>LOADING...</h1>
+                <img alt="loading" src="/images/loading.gif" style="height: 100px">
             </div>
         </div>
     </div>
@@ -40,7 +44,7 @@
                 <nav id="menu">
     <div class="desktop-menu">
         <a class="title" href="/">
-            <span>HEXO</span>
+            <span>跬步千里</span>
         </a>
         
         <a href="/">
@@ -73,7 +77,7 @@
         <div class="curtain" @click="menushow = !menushow" v-show="menushow"></div>
         <div class="title" @click="menushow = !menushow">
             <i class="fa-solid fa-bars fa-fw"></i>
-            <span>&emsp;HEXO</span>
+            <span>&emsp;跬步千里</span>
         </div>
         <transition name="slide">
         <div class="items" v-show="menushow">
@@ -172,11 +176,11 @@
     <div class="footer-wrap">
         <div>
             &copy;
-            2022 - 2023 Hexo
+            2022 - 2023 跬步千里
             <span class="footer-icon">
                 <i class="fa-solid fa-font-awesome fa-fw"></i>
             </span>
-            &commat;John Doe
+            &commat;Dominique Yiu
         </div>
         <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp; <a target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
         
@@ -198,5 +202,23 @@
 
 
 
+        <div id="L2dCanvas"></div>
+        <link rel="stylesheet" href="/css/live2d.min.css">
+        <script src="https://cdn.staticfile.org/pixi.js/4.6.1/pixi.min.js"></script>
+        <script src="/js/live2d.min.js"></script>
+        <script>
+            var v = new Viewer({
+                width: 240,
+                height: 325,
+                right: "0",
+                bottom: "0",
+                basePath: "/model",
+                role: "mingshi",
+                mobile: true,
+            });
+        </script>
+        <canvas id="fireworks" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 32767"></canvas>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+        <script src="/js/fireworks.min.js"></script>
     </body>
 </html>

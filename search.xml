@@ -35,7 +35,10 @@
   <entry>
     <title>CMake Tools for VS Code Documentation</title>
     <url>/2023/02/02/CMake-Tools-for-VS-Code-Documentation/</url>
-    <content><![CDATA[<h1 id="CMake-Tools-for-VS-Code-Documentation"><a href="#CMake-Tools-for-VS-Code-Documentation" class="headerlink" title="CMake Tools for VS Code Documentation"></a>CMake Tools for VS Code Documentation</h1><h2 id="Get-started-with-CMake-Tools-on-Linux"><a href="#Get-started-with-CMake-Tools-on-Linux" class="headerlink" title="Get started with CMake Tools on Linux"></a>Get started with CMake Tools on Linux</h2><p>CMake is an open-source, cross-platform tool that uses complier and platform independent configuration files to generate native build tool files specific to your complier and platform. And the CMake tools extension integrates VS Code and CMake to make it easier to configure, build and debug your C++ project.</p>
+    <content><![CDATA[<p>CMake is an open-source, cross-platform tool that uses complier and platform independent configuration files to generate native build tool files specific to your complier and platform. And the CMake tools extension integrates VS Code and CMake to make it easier to configure, build and debug your C++ project.</p>
+<span id="more"></span>
+
+<h1 id="CMake-Tools-for-VS-Code-Documentation"><a href="#CMake-Tools-for-VS-Code-Documentation" class="headerlink" title="CMake Tools for VS Code Documentation"></a>CMake Tools for VS Code Documentation</h1><h2 id="Get-started-with-CMake-Tools-on-Linux"><a href="#Get-started-with-CMake-Tools-on-Linux" class="headerlink" title="Get started with CMake Tools on Linux"></a>Get started with CMake Tools on Linux</h2><p>CMake is an open-source, cross-platform tool that uses complier and platform independent configuration files to generate native build tool files specific to your complier and platform. And the CMake tools extension integrates VS Code and CMake to make it easier to configure, build and debug your C++ project.</p>
 <ol>
 <li><strong>Check your environment.</strong></li>
 </ol>
@@ -102,7 +105,10 @@
   <entry>
     <title>Anaconda Instructions</title>
     <url>/2023/02/02/Anaconda-Instructions/</url>
-    <content><![CDATA[<h1 id="Anaconda-Instructions"><a href="#Anaconda-Instructions" class="headerlink" title="Anaconda Instructions"></a>Anaconda Instructions</h1><h2 id="Configure-your-environment-with-‘conda’"><a href="#Configure-your-environment-with-‘conda’" class="headerlink" title="Configure your environment with ‘conda’"></a>Configure your environment with ‘conda’</h2><h3 id="Create-a-new-environment"><a href="#Create-a-new-environment" class="headerlink" title="Create a new environment"></a>Create a new environment</h3><ol>
+    <content><![CDATA[<p>Conda is an open-source package and environment management system that runs on Windows, macOS, and Linux. Conda quickly installs, runs, and updates packages and their dependencies. It also easily creates, saves, loads, and switches between environments on your local computer. It was created for Python programs, but it can package and distribute software for any language.</p>
+<span id="more"></span>
+
+<h1 id="Anaconda-Instructions"><a href="#Anaconda-Instructions" class="headerlink" title="Anaconda Instructions"></a>Anaconda Instructions</h1><h2 id="Configure-your-environment-with-‘conda’"><a href="#Configure-your-environment-with-‘conda’" class="headerlink" title="Configure your environment with ‘conda’"></a>Configure your environment with ‘conda’</h2><h3 id="Create-a-new-environment"><a href="#Create-a-new-environment" class="headerlink" title="Create a new environment"></a>Create a new environment</h3><ol>
 <li>Create an environment without additional packages.</li>
 </ol>
 <pre><code class="bash">conda create -n &lt;env_name&gt;

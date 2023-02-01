@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Archives | 跬步千里</title>
+        <title>CMake Tools for VS Code Documentation | 跬步千里</title>
         <meta name="author" content="Dominique Yiu">
         <meta name="description" content="">
         <meta name="keywords" content="">
@@ -133,92 +133,101 @@
     </div>
 </nav>
 
+                <div class="article">
+    <div>
+        <h1>CMake Tools for VS Code Documentation </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/2/2
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
                 
-<div id="archives">
-    
-    <div id="search-mask" style="z-index: 5"></div>
-    <input id="search-bar" class="input" placeholder="搜索" style="z-index: 6">
-    
-    
-    <div class="timeline" style="z-index: 4" data-title="anacondainstructions">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2023/2/2</div>
-            <a href="/2023/02/02/Anaconda-Instructions/">
-                <h3>Anaconda Instructions</h3>
-            </a>
-            <div class="info">
-                
-                
-                <span class="tags">
-                    <span class="icon">
-                        <i class="fa-solid fa-tags fa-fw"></i>
-                    </span>
-                    
-                    <span class="tag">
-                        
-                        <a href="/tags/Anaconda/" style="color: #00bcd4">Anaconda</a>
-                    </span>
-                    
-                </span>
-                
-            </div>
-        </div>
+                <a href="/tags/CMake/" style="color: #00bcd4">CMake</a>
+            </span>
+            
+        </span>
+        
     </div>
     
-    <div class="timeline" style="z-index: 3" data-title="cmaketoolsforvscodedocumentation">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2023/2/2</div>
-            <a href="/2023/02/02/CMake-Tools-for-VS-Code-Documentation/">
-                <h3>CMake Tools for VS Code Documentation</h3>
-            </a>
-            <div class="info">
-                
-                
-                <span class="tags">
-                    <span class="icon">
-                        <i class="fa-solid fa-tags fa-fw"></i>
-                    </span>
-                    
-                    <span class="tag">
-                        
-                        <a href="/tags/CMake/" style="color: #00a596">CMake</a>
-                    </span>
-                    
-                </span>
-                
-            </div>
-        </div>
+    <div class="content" v-pre>
+        <h1 id="CMake-Tools-for-VS-Code-Documentation"><a href="#CMake-Tools-for-VS-Code-Documentation" class="headerlink" title="CMake Tools for VS Code Documentation"></a>CMake Tools for VS Code Documentation</h1><h2 id="Get-started-with-CMake-Tools-on-Linux"><a href="#Get-started-with-CMake-Tools-on-Linux" class="headerlink" title="Get started with CMake Tools on Linux"></a>Get started with CMake Tools on Linux</h2><p>CMake is an open-source, cross-platform tool that uses complier and platform independent configuration files to generate native build tool files specific to your complier and platform. And the CMake tools extension integrates VS Code and CMake to make it easier to configure, build and debug your C++ project.</p>
+<ol>
+<li><strong>Check your environment.</strong></li>
+</ol>
+<p>Although you’ll use VS Code to edit your source code, you’ll compile, debug the source code using complier and debugger, and build tools installed in your system. Check your environment to ensure your GCC, GDB and CMake installed, as well as CMake Tools on VS Code.</p>
+<ol start="2">
+<li><strong>Create CMakeLists.txt</strong></li>
+</ol>
+<p>CmakeLists.txt would tell the CMake tools how to builds your project, which contains a set of directives and instructions describing the project’s source files and targets (executable, library or both).</p>
+<ol start="3">
+<li><strong>Select a kit</strong></li>
+</ol>
+<p>Before you can access to use CMake Tools to organize your project, you have to configure the extension know about the compliers on your system. A kit represents a toolchain, which is the compiler, linker and other tools used to build your project.</p>
+<ol start="4">
+<li><strong>Select a variant</strong></li>
+</ol>
+<p>A variant contains instructions for how to build your project. By default, the CMake Tools extension provides four variants, each corresponding to a default build type: Debug, Release, MinRelSize, and RelWithDebInfor. These options do the following:</p>
+<p><strong>Debug</strong>: disables optimizations and includes debug information. <strong>Release</strong>: Includes optimizations but no debug information. <strong>MinRelSize</strong>: Optimizes for size. No debug information. <strong>RelWithDebInfo</strong>: Optimizes for speed and includes debug info.</p>
+<ol start="5">
+<li><strong>CMake: Configure &amp; Build</strong></li>
+</ol>
+<p>Run the <strong>CMake: Configure</strong> command to configure your project. This generates build files in the project’s build folder using the kit and variant you selected. After configuring your project, then just click the Build button of the status bar at the right-below corner.</p>
+<h2 id="The-CMake-configure-proces"><a href="#The-CMake-configure-proces" class="headerlink" title="The CMake configure proces"></a>The CMake configure proces</h2><p>In CMake, <em>Configure</em> refers to detecting requirements and generating the build files that will produce the final complicated artifacts. The following concepts will help you to understand how CMake Tools interacts with Cmake’s confugure process.</p>
+<ul>
+<li>The CMake Cache is a list of key-value pairs that persist between runs of the configure process.</li>
+<li>Cache initializer arguments are the arguments passed to CMake that set values in the cache before any CMake scripts are run.  These allow you to control the build settings.</li>
+<li>Unless overwritten or deleted, values in the CMake Cache persist between CMake runs.</li>
+<li>CMake doesn’t do the build itself, it relies on build tools installed on your system. The result of a <em>configure</em> depends on the CMake Generator. The Generator tells CMake what kind of tool will be used to compile and generate the results of the build. Here are several families of generators availabel.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Generator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ninja</td>
+<td>Emits files for Ninja Build Tools. This is the default generator that CMake Tools uses, unless configured otherwise.</td>
+</tr>
+<tr>
+<td>Makefile</td>
+<td>Emits a Makefile for the project that can be built via <code>make</code></td>
+</tr>
+<tr>
+<td>Visual Studio</td>
+<td>Emits visual studio solutions and project files. There are many different Visual Studio generators, so it is recommended to let CMake Tools automatically determine the appropriate generator.</td>
+</tr>
+</tbody></table>
+<h2 id="The-Cmake-Tools-configure-step"><a href="#The-Cmake-Tools-configure-step" class="headerlink" title="The Cmake Tools configure step"></a>The Cmake Tools configure step</h2><ol>
+<li>The activate kit. CMake kits provide information about toolchains available on your system that can be used with CMake to build your project.</li>
+<li>Which generator to use. CMake doesn’t deal the build process itself, instead it requires specific generator (the default option is Nanja on VS Code) to do the work. </li>
+<li>The configuration options.  CMake Tools has a variety of locations where configuration options can be define.</li>
+<li>The configuration environment. CMake Tools sets environment variables for the child process it runs for CMake.</li>
+</ol>
+<h2 id="Build-with-CMake-Tools"><a href="#Build-with-CMake-Tools" class="headerlink" title="Build with CMake Tools"></a>Build with CMake Tools</h2><p>Once you have configured your project, then you can start to run a CMake build. Most of your time with CMake Tools will be spend in the process of configuring the build. You can just click the <code>build</code> button in the VS Code status bar. Starting a new build while an existing build is running will cancel the current build and start a new one.</p>
+<h3 id="Build-the-target"><a href="#Build-the-target" class="headerlink" title="Build the target"></a>Build the target</h3><p>CMake Tools persists a “default target” for the build process. The default target is the “all” target, which builds all of the targets that CMake has designated for a default build.</p>
+<p><img src="https://github.com/microsoft/vscode-cmake-tools/raw/main/docs/images/default_target.png" alt="Default target as shown in the status bar"></p>
+<p>Also, you can build a single target without changing the current build target from the VS Code by running the <code>CMake: Build a target</code> command. CMake will build any dependent targets, even if they aren’t directly selected.</p>
+
     </div>
     
-    <div class="timeline" style="z-index: 2" data-title="test">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2023/2/1</div>
-            <a href="/2023/02/02/test/">
-                <h3>test</h3>
-            </a>
-            <div class="info">
-                
-                
-            </div>
-        </div>
-    </div>
     
-    <div class="timeline" style="z-index: 1" data-title="helloworld">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2023/1/30</div>
-            <a href="/2023/01/30/hello-world/">
-                <h3>Hello World</h3>
-            </a>
-            <div class="info">
-                
-                
-            </div>
-        </div>
-    </div>
+    
+    
+    
+    
     
 </div>
 
@@ -245,6 +254,11 @@
         </div>
         <script src="/js/functions.js"></script>
 <script src="/js/particlex.js"></script>
+
+
+
+
+
 
 
 

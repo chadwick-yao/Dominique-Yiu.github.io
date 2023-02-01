@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Archives | 跬步千里</title>
+        <title>Anaconda Instructions | 跬步千里</title>
         <meta name="author" content="Dominique Yiu">
         <meta name="description" content="">
         <meta name="keywords" content="">
@@ -133,92 +133,97 @@
     </div>
 </nav>
 
+                <div class="article">
+    <div>
+        <h1>Anaconda Instructions </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/2/2
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
                 
-<div id="archives">
-    
-    <div id="search-mask" style="z-index: 5"></div>
-    <input id="search-bar" class="input" placeholder="搜索" style="z-index: 6">
-    
-    
-    <div class="timeline" style="z-index: 4" data-title="anacondainstructions">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2023/2/2</div>
-            <a href="/2023/02/02/Anaconda-Instructions/">
-                <h3>Anaconda Instructions</h3>
-            </a>
-            <div class="info">
-                
-                
-                <span class="tags">
-                    <span class="icon">
-                        <i class="fa-solid fa-tags fa-fw"></i>
-                    </span>
-                    
-                    <span class="tag">
-                        
-                        <a href="/tags/Anaconda/" style="color: #00bcd4">Anaconda</a>
-                    </span>
-                    
-                </span>
-                
-            </div>
-        </div>
+                <a href="/tags/Anaconda/" style="color: #00bcd4">Anaconda</a>
+            </span>
+            
+        </span>
+        
     </div>
     
-    <div class="timeline" style="z-index: 3" data-title="cmaketoolsforvscodedocumentation">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2023/2/2</div>
-            <a href="/2023/02/02/CMake-Tools-for-VS-Code-Documentation/">
-                <h3>CMake Tools for VS Code Documentation</h3>
-            </a>
-            <div class="info">
-                
-                
-                <span class="tags">
-                    <span class="icon">
-                        <i class="fa-solid fa-tags fa-fw"></i>
-                    </span>
-                    
-                    <span class="tag">
-                        
-                        <a href="/tags/CMake/" style="color: #00a596">CMake</a>
-                    </span>
-                    
-                </span>
-                
-            </div>
-        </div>
+    <div class="content" v-pre>
+        <h1 id="Anaconda-Instructions"><a href="#Anaconda-Instructions" class="headerlink" title="Anaconda Instructions"></a>Anaconda Instructions</h1><h2 id="Configure-your-environment-with-‘conda’"><a href="#Configure-your-environment-with-‘conda’" class="headerlink" title="Configure your environment with ‘conda’"></a>Configure your environment with ‘conda’</h2><h3 id="Create-a-new-environment"><a href="#Create-a-new-environment" class="headerlink" title="Create a new environment"></a>Create a new environment</h3><ol>
+<li>Create an environment without additional packages.</li>
+</ol>
+<pre><code class="bash">conda create -n &lt;env_name&gt;
+</code></pre>
+<ol start="2">
+<li>An environment with additional packages.</li>
+</ol>
+<pre><code class="bash">conda create -n &lt;env_name&gt; &lt;package_1&gt; &lt;package_2&gt;
+</code></pre>
+<h3 id="Activate-x2F-Deactivate-the-new-environment"><a href="#Activate-x2F-Deactivate-the-new-environment" class="headerlink" title="Activate&#x2F;Deactivate the new environment"></a>Activate&#x2F;Deactivate the new environment</h3><ol>
+<li>Activate</li>
+</ol>
+<pre><code class="bash">conda activate &lt;env_name&gt;
+</code></pre>
+<ol start="2">
+<li>Install many packages with a single line</li>
+</ol>
+<pre><code class="bash">conda install &lt;package_1&gt; &lt;package_2&gt; &lt;package_3&gt; ...
+</code></pre>
+<ol start="2">
+<li>Deactivate</li>
+</ol>
+<pre><code class="bash">conda deactivate
+</code></pre>
+<h2 id="View-information"><a href="#View-information" class="headerlink" title="View information"></a>View information</h2><ol>
+<li>Show environments information</li>
+</ol>
+<pre><code class="bash">conda env list
+</code></pre>
+<ol start="2">
+<li>Show a list of packages in the environment</li>
+</ol>
+<pre><code>conda list
+</code></pre>
+<h2 id="Rename-a-environment"><a href="#Rename-a-environment" class="headerlink" title="Rename a environment"></a>Rename a environment</h2><ol>
+<li>Clone the old environment</li>
+</ol>
+<pre><code class="bash">conda create -n &lt;new_env&gt; --clone &lt;old_env&gt;
+</code></pre>
+<ol start="2">
+<li>Remove the old environment</li>
+</ol>
+<pre><code class="bash">conda remove -n &lt;old_name&gt; --all
+</code></pre>
+<h2 id="Share-environment"><a href="#Share-environment" class="headerlink" title="Share environment"></a>Share environment</h2><ol>
+<li>Export existent environment</li>
+</ol>
+<pre><code class="bash">conda env export &gt; &lt;default.yml&gt;
+</code></pre>
+<ol start="2">
+<li>Recreate a new environment</li>
+</ol>
+<pre><code class="bash">conda env create -f &lt;default.yml&gt; -n &lt;env_name&gt;
+</code></pre>
+
     </div>
     
-    <div class="timeline" style="z-index: 2" data-title="test">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2023/2/1</div>
-            <a href="/2023/02/02/test/">
-                <h3>test</h3>
-            </a>
-            <div class="info">
-                
-                
-            </div>
-        </div>
-    </div>
     
-    <div class="timeline" style="z-index: 1" data-title="helloworld">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2023/1/30</div>
-            <a href="/2023/01/30/hello-world/">
-                <h3>Hello World</h3>
-            </a>
-            <div class="info">
-                
-                
-            </div>
-        </div>
-    </div>
+    
+    
+    
+    
     
 </div>
 
@@ -245,6 +250,11 @@
         </div>
         <script src="/js/functions.js"></script>
 <script src="/js/particlex.js"></script>
+
+
+
+
+
 
 
 

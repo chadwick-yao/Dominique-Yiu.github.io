@@ -1,6 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Anaconda Instructions</title>
+    <url>/2023/02/02/Anaconda-Instructions/</url>
+    <content><![CDATA[<p>Conda is an open-source package and environment management system that runs on Windows, macOS, and Linux. Conda quickly installs, runs, and updates packages and their dependencies. It also easily creates, saves, loads, and switches between environments on your local computer. It was created for Python programs, but it can package and distribute software for any language.</p>
+<span id="more"></span>
+
+<h1 id="Anaconda-Instructions"><a href="#Anaconda-Instructions" class="headerlink" title="Anaconda Instructions"></a>Anaconda Instructions</h1><h2 id="Configure-your-environment-with-‘conda’"><a href="#Configure-your-environment-with-‘conda’" class="headerlink" title="Configure your environment with ‘conda’"></a>Configure your environment with ‘conda’</h2><h3 id="Create-a-new-environment"><a href="#Create-a-new-environment" class="headerlink" title="Create a new environment"></a>Create a new environment</h3><ol>
+<li>Create an environment without additional packages.</li>
+</ol>
+<pre><code class="bash">conda create -n &lt;env_name&gt;
+</code></pre>
+<ol start="2">
+<li>An environment with additional packages.</li>
+</ol>
+<pre><code class="bash">conda create -n &lt;env_name&gt; &lt;package_1&gt; &lt;package_2&gt;
+</code></pre>
+<h3 id="Activate-x2F-Deactivate-the-new-environment"><a href="#Activate-x2F-Deactivate-the-new-environment" class="headerlink" title="Activate&#x2F;Deactivate the new environment"></a>Activate&#x2F;Deactivate the new environment</h3><ol>
+<li>Activate</li>
+</ol>
+<pre><code class="bash">conda activate &lt;env_name&gt;
+</code></pre>
+<ol start="2">
+<li>Install many packages with a single line</li>
+</ol>
+<pre><code class="bash">conda install &lt;package_1&gt; &lt;package_2&gt; &lt;package_3&gt; ...
+</code></pre>
+<ol start="2">
+<li>Deactivate</li>
+</ol>
+<pre><code class="bash">conda deactivate
+</code></pre>
+<h2 id="View-information"><a href="#View-information" class="headerlink" title="View information"></a>View information</h2><ol>
+<li>Show environments information</li>
+</ol>
+<pre><code class="bash">conda env list
+</code></pre>
+<ol start="2">
+<li>Show a list of packages in the environment</li>
+</ol>
+<pre><code>conda list
+</code></pre>
+<h2 id="Rename-a-environment"><a href="#Rename-a-environment" class="headerlink" title="Rename a environment"></a>Rename a environment</h2><ol>
+<li>Clone the old environment</li>
+</ol>
+<pre><code class="bash">conda create -n &lt;new_env&gt; --clone &lt;old_env&gt;
+</code></pre>
+<ol start="2">
+<li>Remove the old environment</li>
+</ol>
+<pre><code class="bash">conda remove -n &lt;old_name&gt; --all
+</code></pre>
+<h2 id="Share-environment"><a href="#Share-environment" class="headerlink" title="Share environment"></a>Share environment</h2><ol>
+<li>Export existent environment</li>
+</ol>
+<pre><code class="bash">conda env export &gt; &lt;default.yml&gt;
+</code></pre>
+<ol start="2">
+<li>Recreate a new environment</li>
+</ol>
+<pre><code class="bash">conda env create -f &lt;default.yml&gt; -n &lt;env_name&gt;
+</code></pre>
+]]></content>
+      <tags>
+        <tag>Anaconda</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows Subsystem for Linux (WSL)</title>
+    <url>/2023/02/02/Windows-Subsystem-for-Linux-WSL/</url>
+    <content><![CDATA[<p>The Windows Subsystem for Linux provides developers a platform to run a GNU&#x2F;Linux environment directly on Windows, including most command-line tools, utilities, and applications, without the overhead of a traditional virtual machine or dualboot setup.</p>
+<span id="more"></span>
+
+<h1 id="Windows-Subsystem-for-Linux-WSL"><a href="#Windows-Subsystem-for-Linux-WSL" class="headerlink" title="Windows Subsystem for Linux (WSL)"></a>Windows Subsystem for Linux (WSL)</h1><h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><h3 id="What-is-WSL"><a href="#What-is-WSL" class="headerlink" title="What is WSL?"></a>What is WSL?</h3><p>The <strong>Windows Subsystem for Linux</strong> provides developers a platform to run a <strong>GNU&#x2F;Linux environment</strong> directly on Windows, including most command-line tools, utilities, and applications, <strong>without</strong> the overhead of a traditional <strong>virtual machine</strong> or <strong>dualboot setup</strong>.</p>
+<ul>
+<li><p>Invoke Windows application using a Unix-like command-line shell.</p>
+</li>
+<li><p>Invoke GNU&#x2F;Linux application on Windows.</p>
+</li>
+<li><p>Run GNU&#x2F;Linux graphical application integrated directly to your Windows desktop.</p>
+</li>
+<li><p>Use GPU acceleration for machine learning, data science scenarios and more.</p>
+</li>
+</ul>
+<h3 id="Comparing-WSL-versions"><a href="#Comparing-WSL-versions" class="headerlink" title="Comparing WSL versions"></a>Comparing WSL versions</h3><p>WSL 2 is a new version of the WSL architecture that powers the WSL to run ELF64 Linux binaries on Windows. Its primary goals are to <strong>increase file system performance</strong>, as well as <strong>adding full system call compatibility</strong>. This new architecture changes how these Linux binaries interact with Windows and computer’s hardware, benefiting from running a real Linux kernel.</p>
+<p>The primary differences between WSL 1 and WSL 2 are the use of an actual Linux kernel inside a managed VM, support for full system call compatibility, and performance across the Linux and Windows operating system.</p>
+<p><img src="/2023/02/02/Windows-Subsystem-for-Linux-WSL/image-20230119141625312.png" alt="image-20230119141625312"></p>
+<blockquote>
+<h4 id="WSL-2-Architecture"><a href="#WSL-2-Architecture" class="headerlink" title="WSL 2 Architecture"></a><strong>WSL 2 Architecture</strong></h4><p>A traditional VM experience can be slow to boot up, is isolated, consumes a lot of resources, and requires your time to manage it. However, WSL 2 provides the benefits of WSL 1, including seamless integration between Windows and Linux, fast boot time, small resource consumption, and requires no VM configuration or management. While <strong>WSL 2 does use a VM</strong>, it is managed and run behind the scenes, leaving you with the same user experiences WSL 1.</p>
+<h4 id="Full-Linux-Kernel"><a href="#Full-Linux-Kernel" class="headerlink" title="Full Linux Kernel"></a><strong>Full Linux Kernel</strong></h4><p>The Linux kernel in WSL 2 is built by Microsoft from the latest stable branch, based on the source available at kernel.org. This kernel has been specially tuned for WSL 2, optimizing for <strong>size and performance</strong> to provide an amazing Linux experience on Windows.</p>
+<h4 id="Increased-file-IO-performance"><a href="#Increased-file-IO-performance" class="headerlink" title="Increased file IO performance"></a><strong>Increased file IO performance</strong></h4><p>File intensive operations like git clone, npm install, apt update, and more are all noticeably faster with WSL 2. The actual speed increase will depend on which ap you’re running and how it is interacting with the file system.</p>
+<h4 id="Full-system-call-compatibility"><a href="#Full-system-call-compatibility" class="headerlink" title="Full system call compatibility"></a><strong>Full system call compatibility</strong></h4><p>Linux binaries use system calls to perform functions such as accessing file, requesting memory, creating processes, and more. Whereas WSL 1 used a translation layer that was built by the WSL team, <strong>WSL 2 includes its own Linux kernel with full system call compatibility</strong>. </p>
+</blockquote>
+<h3 id="Basic-wsl-commands"><a href="#Basic-wsl-commands" class="headerlink" title="Basic wsl commands"></a>Basic wsl commands</h3><pre><code class="shell">wsl --help
+</code></pre>
+<h3 id="Get-started-with-Git"><a href="#Get-started-with-Git" class="headerlink" title="Get started with Git"></a>Get started with Git</h3><ol>
+<li><p><strong>Git Credential Manager setup</strong></p>
+<p>GCM is a secure GIt credential helper built on .NET that can be used with both WSL 1 and WSL 2. It enables multi-factor authentication support for GitHub repos, Azure DevOps, Azure DevOps Server, and Bitbucket. Once you’re authenticated to your hosting provider, requests a new authentication token, It then <strong>stores the token in the GCM</strong>. After the first time, you can use GIt to talk to your hosting provider without needing to re-authenticate.</p>
+</li>
+</ol>
+<pre><code class="bash"># if GIt installed is &gt;= v2.36.1
+git config --global credential.helper &quot;/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager-core.exe&quot;
+# else if version is &lt; v2.36.1 enter this command:
+git config --global credential.helper &quot;/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe&quot;
+</code></pre>
+<blockquote>
+<h4 id="Proxy-settings-are-unique-to-the-specific-WSL-installation-and-not-shared-with-others-or-the-Windows-host"><a href="#Proxy-settings-are-unique-to-the-specific-WSL-installation-and-not-shared-with-others-or-the-Windows-host" class="headerlink" title="Proxy settings are unique to the specific WSL installation and not shared with others or the Windows host."></a>Proxy settings are unique to the specific WSL installation and not shared with others or the Windows host.</h4></blockquote>
+<ol start="2">
+<li><p><strong>Connect to GitHub with Secure Shell Protocol (SSH)</strong></p>
+<ol>
+<li><p><strong>About SSH.</strong> With SSH protocol, you can connect and authenticate to remote servers and services. With SSH keys, you do not need to provide your username and personal access token at each visit. You can also use an SSH key to sign commits. When you set up SSH, you will need to generate <strong>a new private SSH key</strong> and add it to the SSH agent. You must also add <strong>the public SSH key</strong> to your account on GitHub before you use the key to authenticate or sign commits.</p>
+</li>
+<li><p><strong>Checking for existing SSH keys.</strong> Before you generate a new SSH key, you should check your local machine for existing keys. Just Enter <code>ls -al ~/.ssh</code> to see if existing any SSH key at present. If you see an existing public and private key pair listed, you would like to use to connect to GitHub, and add the key to the ssh-agent.</p>
+</li>
+<li><p><strong>Generating a new SSH key and adding it to the ssh-agent.</strong> You can generate a new SSH key on your local machine. After you generate the key, you can add the key to your account on GitHub.com to enable authentication for GIt operations over SSH. Paste <code>ssh-keygen -t ed25519 -C &quot;your_email@example.com&quot;</code> then create a new SSH key. If you don’t have extra requirements (specific file location or passphrase, etc.), press Enter to the end.</p>
+<p>Before adding a new SSH key to the ssh-agent to manage your keys, you should have checked for existing SSH keys and generated a new SSH key. First, ensure the ssh-agent is running. <code>eval &quot;$(ssh-agent -s)&quot;</code> Second, add your SSH private key to the ssh-agent. If you created your key with a different name, or if you are adding an existing key that has a different name, replace <em>id_ed25519</em> in the command with the name of your private key file. Finally, add the SSH key to your account on GitHub.</p>
+<p><strong>If you are using macOS or Linux,</strong> you may need to update your SSH client or install a new SSH client prior to generating a new SSH key.</p>
+</li>
+<li><p><strong>Adding a new SSH key to your GitHub account.</strong> After you generate an SSH key pair, you must add the public key to GitHUb.com to enable SSH access for your account.</p>
+</li>
+<li><p><strong>Testing your SSH connection.</strong> </p>
+</li>
+<li><p><strong>Working with SSH key passphrases.</strong> You can secure your SSH keys configure an authentication agent so that you won’t have to reenter your passphrases every time your use your SSH keys.</p>
+</li>
+</ol>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>WSL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CMake Tools for VS Code Documentation</title>
     <url>/2023/02/02/CMake-Tools-for-VS-Code-Documentation/</url>
     <content><![CDATA[<p>CMake is an open-source, cross-platform tool that uses complier and platform independent configuration files to generate native build tool files specific to your complier and platform. And the CMake tools extension integrates VS Code and CMake to make it easier to configure, build and debug your C++ project.</p>
@@ -68,72 +199,6 @@
 ]]></content>
       <tags>
         <tag>CMake</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Anaconda Instructions</title>
-    <url>/2023/02/02/Anaconda-Instructions/</url>
-    <content><![CDATA[<p>Conda is an open-source package and environment management system that runs on Windows, macOS, and Linux. Conda quickly installs, runs, and updates packages and their dependencies. It also easily creates, saves, loads, and switches between environments on your local computer. It was created for Python programs, but it can package and distribute software for any language.</p>
-<span id="more"></span>
-
-<h1 id="Anaconda-Instructions"><a href="#Anaconda-Instructions" class="headerlink" title="Anaconda Instructions"></a>Anaconda Instructions</h1><h2 id="Configure-your-environment-with-‘conda’"><a href="#Configure-your-environment-with-‘conda’" class="headerlink" title="Configure your environment with ‘conda’"></a>Configure your environment with ‘conda’</h2><h3 id="Create-a-new-environment"><a href="#Create-a-new-environment" class="headerlink" title="Create a new environment"></a>Create a new environment</h3><ol>
-<li>Create an environment without additional packages.</li>
-</ol>
-<pre><code class="bash">conda create -n &lt;env_name&gt;
-</code></pre>
-<ol start="2">
-<li>An environment with additional packages.</li>
-</ol>
-<pre><code class="bash">conda create -n &lt;env_name&gt; &lt;package_1&gt; &lt;package_2&gt;
-</code></pre>
-<h3 id="Activate-x2F-Deactivate-the-new-environment"><a href="#Activate-x2F-Deactivate-the-new-environment" class="headerlink" title="Activate&#x2F;Deactivate the new environment"></a>Activate&#x2F;Deactivate the new environment</h3><ol>
-<li>Activate</li>
-</ol>
-<pre><code class="bash">conda activate &lt;env_name&gt;
-</code></pre>
-<ol start="2">
-<li>Install many packages with a single line</li>
-</ol>
-<pre><code class="bash">conda install &lt;package_1&gt; &lt;package_2&gt; &lt;package_3&gt; ...
-</code></pre>
-<ol start="2">
-<li>Deactivate</li>
-</ol>
-<pre><code class="bash">conda deactivate
-</code></pre>
-<h2 id="View-information"><a href="#View-information" class="headerlink" title="View information"></a>View information</h2><ol>
-<li>Show environments information</li>
-</ol>
-<pre><code class="bash">conda env list
-</code></pre>
-<ol start="2">
-<li>Show a list of packages in the environment</li>
-</ol>
-<pre><code>conda list
-</code></pre>
-<h2 id="Rename-a-environment"><a href="#Rename-a-environment" class="headerlink" title="Rename a environment"></a>Rename a environment</h2><ol>
-<li>Clone the old environment</li>
-</ol>
-<pre><code class="bash">conda create -n &lt;new_env&gt; --clone &lt;old_env&gt;
-</code></pre>
-<ol start="2">
-<li>Remove the old environment</li>
-</ol>
-<pre><code class="bash">conda remove -n &lt;old_name&gt; --all
-</code></pre>
-<h2 id="Share-environment"><a href="#Share-environment" class="headerlink" title="Share environment"></a>Share environment</h2><ol>
-<li>Export existent environment</li>
-</ol>
-<pre><code class="bash">conda env export &gt; &lt;default.yml&gt;
-</code></pre>
-<ol start="2">
-<li>Recreate a new environment</li>
-</ol>
-<pre><code class="bash">conda env create -f &lt;default.yml&gt; -n &lt;env_name&gt;
-</code></pre>
-]]></content>
-      <tags>
-        <tag>Anaconda</tag>
       </tags>
   </entry>
 </search>

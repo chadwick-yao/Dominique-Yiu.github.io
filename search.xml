@@ -1,72 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Anaconda Instructions</title>
-    <url>/2023/02/02/Anaconda-Instructions/</url>
-    <content><![CDATA[<p>Conda is an open-source package and environment management system that runs on Windows, macOS, and Linux. Conda quickly installs, runs, and updates packages and their dependencies. It also easily creates, saves, loads, and switches between environments on your local computer. It was created for Python programs, but it can package and distribute software for any language.</p>
-<span id="more"></span>
-
-<h1 id="Anaconda-Instructions"><a href="#Anaconda-Instructions" class="headerlink" title="Anaconda Instructions"></a>Anaconda Instructions</h1><h2 id="Configure-your-environment-with-‘conda’"><a href="#Configure-your-environment-with-‘conda’" class="headerlink" title="Configure your environment with ‘conda’"></a>Configure your environment with ‘conda’</h2><h3 id="Create-a-new-environment"><a href="#Create-a-new-environment" class="headerlink" title="Create a new environment"></a>Create a new environment</h3><ol>
-<li>Create an environment without additional packages.</li>
-</ol>
-<pre><code class="bash">conda create -n &lt;env_name&gt;
-</code></pre>
-<ol start="2">
-<li>An environment with additional packages.</li>
-</ol>
-<pre><code class="bash">conda create -n &lt;env_name&gt; &lt;package_1&gt; &lt;package_2&gt;
-</code></pre>
-<h3 id="Activate-x2F-Deactivate-the-new-environment"><a href="#Activate-x2F-Deactivate-the-new-environment" class="headerlink" title="Activate&#x2F;Deactivate the new environment"></a>Activate&#x2F;Deactivate the new environment</h3><ol>
-<li>Activate</li>
-</ol>
-<pre><code class="bash">conda activate &lt;env_name&gt;
-</code></pre>
-<ol start="2">
-<li>Install many packages with a single line</li>
-</ol>
-<pre><code class="bash">conda install &lt;package_1&gt; &lt;package_2&gt; &lt;package_3&gt; ...
-</code></pre>
-<ol start="2">
-<li>Deactivate</li>
-</ol>
-<pre><code class="bash">conda deactivate
-</code></pre>
-<h2 id="View-information"><a href="#View-information" class="headerlink" title="View information"></a>View information</h2><ol>
-<li>Show environments information</li>
-</ol>
-<pre><code class="bash">conda env list
-</code></pre>
-<ol start="2">
-<li>Show a list of packages in the environment</li>
-</ol>
-<pre><code>conda list
-</code></pre>
-<h2 id="Rename-a-environment"><a href="#Rename-a-environment" class="headerlink" title="Rename a environment"></a>Rename a environment</h2><ol>
-<li>Clone the old environment</li>
-</ol>
-<pre><code class="bash">conda create -n &lt;new_env&gt; --clone &lt;old_env&gt;
-</code></pre>
-<ol start="2">
-<li>Remove the old environment</li>
-</ol>
-<pre><code class="bash">conda remove -n &lt;old_name&gt; --all
-</code></pre>
-<h2 id="Share-environment"><a href="#Share-environment" class="headerlink" title="Share environment"></a>Share environment</h2><ol>
-<li>Export existent environment</li>
-</ol>
-<pre><code class="bash">conda env export &gt; &lt;default.yml&gt;
-</code></pre>
-<ol start="2">
-<li>Recreate a new environment</li>
-</ol>
-<pre><code class="bash">conda env create -f &lt;default.yml&gt; -n &lt;env_name&gt;
-</code></pre>
-]]></content>
-      <tags>
-        <tag>Anaconda</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CMake Tools for VS Code Documentation</title>
     <url>/2023/02/02/CMake-Tools-for-VS-Code-Documentation/</url>
     <content><![CDATA[<p>CMake is an open-source, cross-platform tool that uses complier and platform independent configuration files to generate native build tool files specific to your complier and platform. And the CMake tools extension integrates VS Code and CMake to make it easier to configure, build and debug your C++ project.</p>
@@ -366,6 +300,72 @@ vodi remove(int i) &#123;
 ]]></content>
       <tags>
         <tag>Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Anaconda Instructions</title>
+    <url>/2023/02/02/Anaconda-Instructions/</url>
+    <content><![CDATA[<p>Conda is an open-source package and environment management system that runs on Windows, macOS, and Linux. Conda quickly installs, runs, and updates packages and their dependencies. It also easily creates, saves, loads, and switches between environments on your local computer. It was created for Python programs, but it can package and distribute software for any language.</p>
+<span id="more"></span>
+
+<h1 id="Anaconda-Instructions"><a href="#Anaconda-Instructions" class="headerlink" title="Anaconda Instructions"></a>Anaconda Instructions</h1><h2 id="Configure-your-environment-with-‘conda’"><a href="#Configure-your-environment-with-‘conda’" class="headerlink" title="Configure your environment with ‘conda’"></a>Configure your environment with ‘conda’</h2><h3 id="Create-a-new-environment"><a href="#Create-a-new-environment" class="headerlink" title="Create a new environment"></a>Create a new environment</h3><ol>
+<li>Create an environment without additional packages.</li>
+</ol>
+<pre><code class="bash">conda create -n &lt;env_name&gt;
+</code></pre>
+<ol start="2">
+<li>An environment with additional packages.</li>
+</ol>
+<pre><code class="bash">conda create -n &lt;env_name&gt; &lt;package_1&gt; &lt;package_2&gt;
+</code></pre>
+<h3 id="Activate-x2F-Deactivate-the-new-environment"><a href="#Activate-x2F-Deactivate-the-new-environment" class="headerlink" title="Activate&#x2F;Deactivate the new environment"></a>Activate&#x2F;Deactivate the new environment</h3><ol>
+<li>Activate</li>
+</ol>
+<pre><code class="bash">conda activate &lt;env_name&gt;
+</code></pre>
+<ol start="2">
+<li>Install many packages with a single line</li>
+</ol>
+<pre><code class="bash">conda install &lt;package_1&gt; &lt;package_2&gt; &lt;package_3&gt; ...
+</code></pre>
+<ol start="2">
+<li>Deactivate</li>
+</ol>
+<pre><code class="bash">conda deactivate
+</code></pre>
+<h2 id="View-information"><a href="#View-information" class="headerlink" title="View information"></a>View information</h2><ol>
+<li>Show environments information</li>
+</ol>
+<pre><code class="bash">conda env list
+</code></pre>
+<ol start="2">
+<li>Show a list of packages in the environment</li>
+</ol>
+<pre><code>conda list
+</code></pre>
+<h2 id="Rename-a-environment"><a href="#Rename-a-environment" class="headerlink" title="Rename a environment"></a>Rename a environment</h2><ol>
+<li>Clone the old environment</li>
+</ol>
+<pre><code class="bash">conda create -n &lt;new_env&gt; --clone &lt;old_env&gt;
+</code></pre>
+<ol start="2">
+<li>Remove the old environment</li>
+</ol>
+<pre><code class="bash">conda remove -n &lt;old_name&gt; --all
+</code></pre>
+<h2 id="Share-environment"><a href="#Share-environment" class="headerlink" title="Share environment"></a>Share environment</h2><ol>
+<li>Export existent environment</li>
+</ol>
+<pre><code class="bash">conda env export &gt; &lt;default.yml&gt;
+</code></pre>
+<ol start="2">
+<li>Recreate a new environment</li>
+</ol>
+<pre><code class="bash">conda env create -f &lt;default.yml&gt; -n &lt;env_name&gt;
+</code></pre>
+]]></content>
+      <tags>
+        <tag>Anaconda</tag>
       </tags>
   </entry>
 </search>

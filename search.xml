@@ -371,7 +371,10 @@ git config --global credential.helper &quot;/mnt/c/Program\ Files/Git/mingw64/li
   <entry>
     <title>CS50 AI Project0</title>
     <url>/2023/02/19/CS50-AI-Project0/</url>
-    <content><![CDATA[<h2 id="Degrees"><a href="#Degrees" class="headerlink" title="Degrees"></a>Degrees</h2><p><font size="5">Task description: Write a program that determines how many <br>“degrees of separation” apart two actors are.</font></p>
+    <content><![CDATA[<p>These are the project tasks affiliated with Harvard CS50. <a href="https://cs50.harvard.edu/ai/2020/">Check it out.</a></p>
+<span id="more"></span>
+
+<h2 id="Degrees"><a href="#Degrees" class="headerlink" title="Degrees"></a>Degrees</h2><p><font size="5">Task description: Write a program that determines how many <br>“degrees of separation” apart two actors are.</font></p>
 <pre><code class="shell"># for example, when gets these inputs below, results would be like that
 $ python degrees.py large
 Loading data...

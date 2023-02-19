@@ -368,4 +368,92 @@ git config --global credential.helper &quot;/mnt/c/Program\ Files/Git/mingw64/li
         <tag>WSL</tag>
       </tags>
   </entry>
+  <entry>
+    <title>CS50 AI Project0</title>
+    <url>/2023/02/19/CS50-AI-Project0/</url>
+    <content><![CDATA[<h2 id="Degrees"><a href="#Degrees" class="headerlink" title="Degrees"></a>Degrees</h2><p><font size="5">Task description: Write a program that determines how many <br>“degrees of separation” apart two actors are.</font></p>
+<pre><code class="shell"># for example, when gets these inputs below, results would be like that
+$ python degrees.py large
+Loading data...
+Data loaded.
+Name: Emma Watson
+Name: Jennifer Lawrence
+3 degrees of separation.
+1: Emma Watson and Brendan Gleeson starred in Harry Potter and the Order of the Phoenix
+2: Brendan Gleeson and Michael Fassbender starred in Trespass Against Us
+3: Michael Fassbender and Jennifer Lawrence starred in X-Men: First Class
+</code></pre>
+<h3 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h3><p>This problem is originated from <a href="https://en.wikipedia.org/wiki/Six_Degrees_of_Kevin_Bacon"> Six Degrees of Kevin Bacon</a> game, saying that anyone in Hollywood film industry can be connected to Kevin Bacon within 6 steps, where each step consists of finding a film that two actors both starred in.</p>
+<p>Actually, there maybe exist multiple ways to connect two actors, but in this problem, it just considers the shortest path. In detail, its purpose is to choose a sequence of movies with least length to connect two stars. For example, if the shortest path between Jennifer Lawrence and Tom Hanks is 2: Jennifer Lawrence is connected to Kevin Bacon by both starring in “X-Men: First Class”, and Kevin Bacon is connected to Tom Hanks by both starring in “Apollo 13”.</p>
+<blockquote>
+<h1 id="What-is-the-State-and-the-Action"><a href="#What-is-the-State-and-the-Action" class="headerlink" title="What is the State and the Action?"></a>What is the State and the Action?</h1><p>Here, each person can be regarded as a state, and a movie can be regarded as action. In other words, a movie could connect one person to another one. And the problem is to find the shortest path, so breadth-first search is the best option.</p>
+</blockquote>
+<h3 id="Understanding"><a href="#Understanding" class="headerlink" title="Understanding"></a>Understanding</h3><p><strong>Directory: Large.</strong><code>people.csv</code> Each person with a unique <code>id</code> has his <code>name</code> and <code>birth</code>. <code>stars.csv</code> Each row is a pair of a <code>person_id</code> value and <code>movie_id</code> value, indicating person with <code>person_id</code> stars in the movie with <code>movie_id</code>. <code>movies.csv</code> It contains <code>movie_id</code>, <code>titlt</code> and the <code>year</code> that the movies was released.</p>
+<p><strong>Directory: Small.</strong> The same as <code>Large</code>, but with small database.</p>
+<p><strong>degrees.py</strong> </p>
+<p>Variables:</p>
+<ul>
+<li>names(dict) | name -&gt; person_ids {maybe people have the same name}</li>
+<li>people(dict) | person_id -&gt; name, birth, movies(set)</li>
+<li>movies(dict) | movie_id -&gt; title, year, stars(set)</li>
+</ul>
+<p>Functions:</p>
+<ul>
+<li><p>load_data: loads data from <code>people.csv</code>, <code>stars.csv</code> and <code>movies.csv</code></p>
+</li>
+<li><p>main: print the result of one of the shortest path (if it has), or return None when there exists no shortest path.</p>
+</li>
+<li><p>shortest_path: returns the shortest list of (movies, person_id) pairs</p>
+</li>
+<li><p>person_id_for_name: returns person_id of the person’s name</p>
+</li>
+<li><p>neighbor_for_person: returns (movies, person_id) pairs that relates to the given person</p>
+</li>
+</ul>
+<h2 id="Use-BFS-to-find-the-shortest-path"><a href="#Use-BFS-to-find-the-shortest-path" class="headerlink" title="Use BFS to find the shortest path"></a>Use BFS to find the shortest path</h2><p>There are two points that we need to pay attention to. First, we cannot visit the node that we have visited, this is because maybe it could cause circle making this loop never end and it absolutely is not the shortest path when we revisit one node. Second, when we backtrack, the order of the result is the opposite, just reverse it.</p>
+<pre><code class="python">def shortest_path(source, target):
+    &quot;&quot;&quot;
+    Returns the shortest list of (movie_id, person_id) pairs
+    that connect the source to the target.
+
+    If no possible path, returns None.
+    &quot;&quot;&quot;
+    Q = QueueFrontier()
+    root = Node(state=source, parent=None, action=None)
+    target_leave = Node(state=None, parent=None, action=None)
+    Q.add(root)
+
+    _find = False
+    path = list()
+    unordered_map = dict()
+    while (not Q.empty()) and (not _find):
+        top_Node = Q.remove()
+        if top_Node.state not in unordered_map:
+            unordered_map[top_Node.state] = 1
+        # find the top node&#39;s neighbors
+        neighbors = neighbors_for_person(top_Node.state)
+        for neighbor in neighbors:
+            movie_id, person_id = neighbor
+            if person_id not in unordered_map:
+                child = Node(state=person_id, parent=top_Node, action=movie_id)
+                if (child.state == target):
+                    target_leave = child
+                    _find = True
+                    break
+                Q.add(child)
+    if target_leave.state == None:
+        return None
+    else:
+        while target_leave.parent != None:
+            # append (&quot;movie_title&quot;, &quot;person_name&quot;)
+            path.append((target_leave.action, target_leave.state))
+            target_leave = target_leave.parent
+    path.reverse()
+    return path
+</code></pre>
+]]></content>
+      <tags>
+        <tag>Artificial Intelligence</tag>
+      </tags>
+  </entry>
 </search>

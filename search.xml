@@ -459,4 +459,187 @@ Name: Jennifer Lawrence
         <tag>Artificial Intelligence</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Merge Sort and Its Application</title>
+    <url>/2023/02/20/Merge-Sort-and-Its-Application/</url>
+    <content><![CDATA[<p><strong>Merge Sort Algorithm</strong> is based on the concept of <code>Divide and Conquer</code>, specifically it is traversing a tree, and the process of merging is an action implemented in post order. As we know each child part is in order after merging, we can use this characteristic to address some problems. For example, <a href="https://leetcode.com/problems/reverse-pairs/">Reverse Pairs</a>, when the child is in order, it becomes easy to calculate the number of <code>reverse pair</code> between the left child and the right child.</p>
+<span id="more"></span>
+
+<p><img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220714/1526101657783570EmOMLr5.svg" alt="5"></p>
+<p>The picture above visualizes the process of <code>merge sort algorithm</code>, where we easily recognize the depth of tree is <code>log(N)</code>. And basically we have to sort sequences in merging, the time complexity is <code>O(N)</code>. So this algorithm time complexity is <code>Nlog(N)</code> in total.</p>
+<h2 id="Merge-Sort-Algorithm"><a href="#Merge-Sort-Algorithm" class="headerlink" title="Merge Sort Algorithm"></a>Merge Sort Algorithm</h2><p>According the idea from the picture above, we can easily code this program below.</p>
+<pre><code class="cpp">class Solution
+&#123;
+public:
+    vector&lt;int&gt; sortArray(vector&lt;int&gt; &amp;nums)
+    &#123;
+        int len = nums.size();
+        if (len &lt; 2) return;
+        
+        int mid = len &gt;&gt; 1;
+        vector&lt;int&gt; leftArray(nums.begin(), nums.begin() + mid);
+        vector&lt;int&gt; rightArray(nums.begin() + mid, nums.end());
+        
+        sort(leftArray);
+        sort(rightArray);
+        mergeArray(nums, leftArray, rightArray);
+        
+        return nums;
+    &#125;
+    
+    void mergeArray(vector&lt;int&gt; &amp;nums, vector&lt;int&gt; &amp;leftArray, vector&lt;int&gt; &amp;right)
+    &#123;
+        int leftSize = leftArray.size(), rightSize = rightArray.size();
+        int cur = 0, cur1 = 0, cur2 = 0;
+        
+        while (cur1 &lt; leftSize &amp;&amp; cur2 &lt; rightSize)
+        &#123;
+            if (leftArray[cur1] &lt;= rightArray[cur2])
+                nums[cur++] = leftArray[cur1++];
+               else
+                nums[cur++] = rightArray[cur2++];
+        &#125;
+        
+        while (cur1 &lt; leftSize)
+            nums[cur++] = leftArray[cur1++];
+        while (cur2 &lt; rightSize)
+            nums[cur++] = rightArray[cur2++];
+    &#125;
+&#125;；
+</code></pre>
+<p>About its application, we always try to find whether a problem can apply the characteristic that the children parts are in order after merging. Here are some problems to apply <code>merge sort algorithm</code>.</p>
+<h2 id="Count-of-Smaller-Numbers-After-Self"><a href="#Count-of-Smaller-Numbers-After-Self" class="headerlink" title="Count of Smaller Numbers After Self"></a><a href="https://leetcode.com/problems/count-of-smaller-numbers-after-self/?utm_source=LCUS&utm_medium=ip_redirect&utm_campaign=transfer2china">Count of Smaller Numbers After Self</a></h2><p>Suppose <code>i</code> points the 1st element of the left, <code>j</code> and <code>mid+1</code> points 1st element of the right. When we’re merging, if <code>temp[i]</code> is less <code>temp[j]</code>, we can know that there are <code>j-mid-1</code> elements are less than <code>temp[i]</code>, because the array is monotonically increasing.</p>
+<img src="/2023/02/20/Merge-Sort-and-Its-Application/image-20230220153246591.png" alt="image-20230220153246591" style="zoom:50%;">
+
+<pre><code class="cpp">class Solution &#123;
+public:
+    vector&lt;pair&lt;int, int&gt;&gt; temp;
+    vector&lt;int&gt; count;
+    vector&lt;int&gt; countSmaller(vector&lt;int&gt;&amp; nums) &#123;
+        int n = nums.size();
+        vector&lt;pair&lt;int, int&gt;&gt; num_index;
+        for (int i = 0; i &lt; n; i++)
+            num_index.push_back(pair&lt;int, int&gt;(nums[i], i));
+        
+        temp = vector&lt;pair&lt;int, int&gt;&gt;(n);
+        count = vector&lt;int&gt;(n, 0);
+
+        merge_sort(num_index, 0, n-1);
+        return count;
+    &#125;
+    void merge_sort(vector&lt;pair&lt;int, int&gt;&gt;&amp; num_index, int l, int r)&#123;
+        if (l &gt;= r) return;
+        int mid = l + (r - l) / 2;
+        merge_sort(num_index, l, mid);
+        merge_sort(num_index, mid+1, r);
+        merge(num_index, l, mid, r);
+    &#125;
+    void merge(vector&lt;pair&lt;int, int&gt;&gt;&amp; num_index, int l, int mid, int r)&#123;
+        int i = l, j = mid + 1;
+        int k = l;
+        while (i &lt;= mid &amp;&amp; j &lt;= r)&#123;
+            if (num_index[i].first &lt;= num_index[j].first)&#123;
+                count[num_index[i].second] += j - mid - 1;
+                temp[k++] = num_index[i++];
+            &#125;
+            else temp[k++] = num_index[j++];
+        &#125;
+        while (i &lt;= mid) &#123;
+            count[num_index[i].second] += j - mid - 1; 
+            temp[k++] = num_index[i++];
+        &#125;
+        while (j &lt;= r) temp[k++] = num_index[j++];
+        for (i = l; i &lt;= r; i++)
+            num_index[i] = temp[i];
+    &#125;
+&#125;;
+</code></pre>
+<h2 id="Reverse-Pairs"><a href="#Reverse-Pairs" class="headerlink" title="Reverse Pairs"></a><a href="https://leetcode.com/problems/reverse-pairs/">Reverse Pairs</a></h2><p>This problem is just the same as the last one with a little difference. We assume that we have the ordered left child and right child below. And the next step is merging, but before that, we can calculate the number between the left and the right, <code>betValue</code>. Suppose <code>leftValue</code> as the number  in the left, as well as <code>rightValue</code> in the right. The final result can be calculated recursively.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220714/1600211657785621E3qWVR6.svg" alt="6"></p>
+<p>So, how to get <code>betValue</code>? Just add some codes in the post order space. We can get the first element in the right that is more than <code>nums[i] / 2.0</code>. </p>
+<pre><code class="cpp">class Solution
+&#123;
+public:
+    vector&lt;int&gt; tmp;
+    int mergeSort(vector&lt;int&gt; &amp;nums, int left, int right)
+    &#123;
+        if (left &gt;= right)
+            return 0;
+        int mid = left + ((right - left) &gt;&gt; 1);
+
+        int retLeft = mergeSort(nums, left, mid);
+        int retRight = mergeSort(nums, mid + 1, right);
+
+        int cur1 = left, cur2 = mid + 1;
+        int ret = 0;
+
+        while (cur1 &lt;= mid)
+        &#123;
+            while (cur2 &lt;= right &amp;&amp; nums[cur1] / 2.0 &gt; nums[cur2])
+                cur2++;
+            ret += cur2 - mid - 1;
+            cur1++;
+        &#125;
+
+        merge(nums, left, mid, right);
+
+        return ret + retLeft + retRight;
+    &#125;
+    
+    merge(vector&lt;int&gt;&amp; numx, int l, int mid, int r) &#123;...&#125;
+
+    int reversePairs(vector&lt;int&gt; &amp;nums)
+    &#123;
+        int len = nums.size();
+        tmp = vector&lt;int&gt;(len, 0);
+        return mergeSort(nums, 0, len - 1);
+    &#125;
+&#125;;
+</code></pre>
+<h2 id="Count-of-Range-Sum"><a href="#Count-of-Range-Sum" class="headerlink" title="Count of Range Sum"></a><a href="https://leetcode.com/problems/count-of-range-sum/">Count of Range Sum</a></h2><p>It’s the same, but here we need to use <code>Prefix Sum Array</code> and understand why we can use <code>merge sort</code> to solve this problem.</p>
+<pre><code class="cpp">class Solution
+&#123;
+public:
+    vector&lt;long&gt; tmp;
+    int countRangeSum(vector&lt;int&gt; &amp;nums, int lower, int upper)
+    &#123;
+        int len = nums.size();
+        vector&lt;long&gt; preSum(&#123;0&#125;);
+        for (int i = 0; i &lt; len; i++)
+            preSum.emplace_back(preSum[i] + nums[i]);
+        tmp = vector&lt;long&gt;(preSum.size(), 0);
+        return mergeSort(preSum, 0, preSum.size() - 1, lower, upper);
+    &#125;
+
+    int mergeSort(vector&lt;long&gt; &amp;nums, int left, int right, int lower, int upper)
+    &#123;
+        if (left &gt;= right)
+            return 0;
+        int mid = left + ((right - left) &gt;&gt; 1);
+
+        int retLeft = mergeSort(nums, left, mid, lower, upper);
+        int retRight = mergeSort(nums, mid + 1, right, lower, upper);
+
+        int cur1 = mid + 1, cur2 = mid + 1;
+        int ret = 0;
+        for (int i = left; i &lt;= mid; i++)
+        &#123;
+            while (cur1 &lt;= right &amp;&amp; nums[cur1] - nums[i] &lt; lower)
+                cur1++;
+            while (cur2 &lt;= right &amp;&amp; nums[cur2] - nums[i] &lt;= upper)
+                cur2++;
+            ret += cur2 - cur1;
+        &#125;
+
+        merge(nums, left, mid, right);
+        return ret + retLeft + retRight;
+    &#125;
+    merge(vector&lt;int&gt;&amp; numx, int l, int mid, int r) &#123;...&#125;
+&#125;;
+</code></pre>
+]]></content>
+      <tags>
+        <tag>Algorithm, Merge Sort</tag>
+      </tags>
+  </entry>
 </search>

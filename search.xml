@@ -1358,7 +1358,8 @@ variance = (self._get_variance(t, predicted_variance=predicted_variance) ** 0.5)
 </blockquote>
 ]]></content>
       <tags>
-        <tag>Imitation Learning, Reinforcement Learning</tag>
+        <tag>Imitation Learning</tag>
+        <tag>Reinforcement Learning</tag>
       </tags>
   </entry>
 </search>

@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>跬步千里</title>
+        <title>Diffusion_Policy | 跬步千里</title>
         <meta name="author" content="Dominique Yiu">
         <meta name="description" content="">
         <meta name="keywords" content="">
@@ -133,35 +133,11 @@
     </div>
 </nav>
 
-                <div id="home-head">
-    <div id="home-background" style="background-image: url(images/wallhaven-q6omvd.jpg)"></div>
-    
-    <div id="home-info" @click="homeclick">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>跬步千里</h1>
-                <h3>Stay hungry &amp; Stay foolish</h3>
-                <h5></h5>
-            </div>
-        </span>
+                <div class="article">
+    <div>
+        <h1>Diffusion_Policy </h1>
     </div>
-    
-</div>
-<div id="home-posts-wrap" class="">
-    <div id="home-posts">
-        <div id="posts">
-            
-
-<div class="post">
-    <a href="/2023/08/22/Diffusion-Policy/">
-        <h2 class="post-title">Diffusion_Policy</h2>
-    </a>
-    <div class="category-and-date">
-        
+    <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
@@ -170,11 +146,22 @@
         </span>
         
         
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
             
-            <h1 id="Diffusion-Policy"><a href="#Diffusion-Policy" class="headerlink" title="Diffusion Policy"></a>Diffusion Policy</h1><h2 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h2><p>:arrow_forward: <strong>Original Data in HDF5 File</strong></p>
+            <span class="tag">
+                
+                <a href="/tags/Imitation-Learning-Reinforcement-Learning/" style="color: #ff7d73">Imitation Learning, Reinforcement Learning</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h1 id="Diffusion-Policy"><a href="#Diffusion-Policy" class="headerlink" title="Diffusion Policy"></a>Diffusion Policy</h1><h2 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h2><p>:arrow_forward: <strong>Original Data in HDF5 File</strong></p>
 <p>The official provides dataset in <code>hdf5</code> format. The <code>hdf5</code> file saves many stuffs of demonstrations, such as actions, dones(whether the episode is done), rewards, states(vectors describing the robot states), and obs. However, for training the policy, here just uses a part of this dataset.</p>
 <pre><code class="yaml">Group: /data/demo_0
   Dataset: /data/demo_0/actions    shape: (127, 7)
@@ -885,309 +872,13 @@ variance = (self._get_variance(t, predicted_variance=predicted_variance) ** 0.5)
 <p>bs means batch_size. Because it needs to consider whether regarding observations as a condition. If no, the shape of the output is like (B, T, Da+Do), which uses impainting method to replace action with obs features. If yes, then consider whether predicting action steps only, output shape is (B, n_action_steps, Da) when predicting action steps only, else (B, T, Da).</p>
 </blockquote>
 
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Imitation-Learning-Reinforcement-Learning/" style="color: #00bcd4">
-                Imitation Learning, Reinforcement Learning
-            </a>
-        </span>
-        
-    </div>
-    <a href="/2023/08/22/Diffusion-Policy/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/02/20/Merge-Sort-and-Its-Application/">
-        <h2 class="post-title">Merge Sort and Its Application</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/2/20
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p><strong>Merge Sort Algorithm</strong> is based on the concept of <code>Divide and Conquer</code>, specifically it is traversing a tree, and the process of merging is an action implemented in post order. As we know each child part is in order after merging, we can use this characteristic to address some problems. For example, <a target="_blank" rel="noopener" href="https://leetcode.com/problems/reverse-pairs/">Reverse Pairs</a>, when the child is in order, it becomes easy to calculate the number of <code>reverse pair</code> between the left child and the right child.</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Algorithm/" style="color: #ff7d73">
-                Algorithm
-            </a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Merge-Sort/" style="color: #03a9f4">
-                Merge Sort
-            </a>
-        </span>
-        
-    </div>
-    <a href="/2023/02/20/Merge-Sort-and-Its-Application/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/02/19/CS50-AI-Project0/">
-        <h2 class="post-title">CS50 AI Project0</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/2/19
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>These are the project tasks affiliated with Harvard CS50. <a target="_blank" rel="noopener" href="https://cs50.harvard.edu/ai/2020/">Check it out.</a></p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Artificial-Intelligence/" style="color: #ffa2c4">
-                Artificial Intelligence
-            </a>
-        </span>
-        
-    </div>
-    <a href="/2023/02/19/CS50-AI-Project0/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/02/06/Priority-Queue-Using-Binary-Heap/">
-        <h2 class="post-title">Priority Queue Using Binary Heap</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/2/5
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>Binary Heap is not so mysterious, whose operations just involve two, <code>Shift Up</code> and <code>Shift Down</code> to maintain its properties. Its application has two main aspects, the one is to implement <code>Heap Sort</code>, another is to realize a practical data structure called <code>Priority Queue</code>.</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Algorithm/" style="color: #03a9f4">
-                Algorithm
-            </a>
-        </span>
-        
-    </div>
-    <a href="/2023/02/06/Priority-Queue-Using-Binary-Heap/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/02/02/Anaconda-Instructions/">
-        <h2 class="post-title">Anaconda Instructions</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/2/2
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>Conda is an open-source package and environment management system that runs on Windows, macOS, and Linux. Conda quickly installs, runs, and updates packages and their dependencies. It also easily creates, saves, loads, and switches between environments on your local computer. It was created for Python programs, but it can package and distribute software for any language.</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Anaconda/" style="color: #ffa2c4">
-                Anaconda
-            </a>
-        </span>
-        
-    </div>
-    <a href="/2023/02/02/Anaconda-Instructions/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/02/02/CMake-Tools-for-VS-Code-Documentation/">
-        <h2 class="post-title">CMake Tools for VS Code Documentation</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/2/2
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>CMake is an open-source, cross-platform tool that uses complier and platform independent configuration files to generate native build tool files specific to your complier and platform. And the CMake tools extension integrates VS Code and CMake to make it easier to configure, build and debug your C++ project.</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/CMake/" style="color: #ff7d73">
-                CMake
-            </a>
-        </span>
-        
-    </div>
-    <a href="/2023/02/02/CMake-Tools-for-VS-Code-Documentation/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/02/02/Windows-Subsystem-for-Linux-WSL/">
-        <h2 class="post-title">Windows Subsystem for Linux (WSL)</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/2/2
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>The Windows Subsystem for Linux provides developers a platform to run a GNU&#x2F;Linux environment directly on Windows, including most command-line tools, utilities, and applications, without the overhead of a traditional virtual machine or dualboot setup.</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/WSL/" style="color: #ff7d73">
-                WSL
-            </a>
-        </span>
-        
-    </div>
-    <a href="/2023/02/02/Windows-Subsystem-for-Linux-WSL/" class="go-post">阅读全文</a>
-</div>
-
-
-            <div class="page-current">
-    <div class="prev">
-        
-    </div>
-    <div class="page-index">
-        
-        <span class="current">1</span>
-        
-    </div>
-    <div class="next">
-        
-    </div>
-</div>
-
-        </div>
     </div>
     
-    <div id="home-card">
-        <div id="card-div">
-    <div class="card-style" style="width: 300px">
-        <div class="avatar">
-            <img src="/images/avatar.jpg" alt="avatar">
-        </div>
-        <div class="name">Dominique Yiu</div>
-        <div class="description">
-            <p>Hi There</p>
-
-        </div>
-        
-        
-    </div>
-</div>
-
-    </div>
+    
+    
+    
+    
+    
     
 </div>
 
@@ -1214,6 +905,11 @@ variance = (self._get_variance(t, predicted_variance=predicted_variance) ** 0.5)
         </div>
         <script src="/js/functions.js"></script>
 <script src="/js/particlex.js"></script>
+
+
+
+
+
 
 
 

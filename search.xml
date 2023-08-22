@@ -644,7 +644,7 @@ public:
       </tags>
   </entry>
   <entry>
-    <title>Diffusion_Policy</title>
+    <title>Diffusion Policy</title>
     <url>/2023/08/22/Diffusion-Policy/</url>
     <content><![CDATA[<p>Diffusion model has already been used in computer vision for such a long time. However, in RSS 2023, it’s also used in Robotics, achieving a promising performance.</p>
 <span id="more"></span>

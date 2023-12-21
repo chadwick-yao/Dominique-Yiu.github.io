@@ -1365,4 +1365,17 @@ variance = (self._get_variance(t, predicted_variance=predicted_variance) ** 0.5)
         <tag>Reinforcement Learning</tag>
       </tags>
   </entry>
+  <entry>
+    <title>ROS2Humble</title>
+    <url>/2023/12/22/ROS2Humble/</url>
+    <content><![CDATA[<p>It is about my ROS2 Humble Distro learning travelling.</p>
+<span id="more"></span>
+
+<h2 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h2><h3 id="Intermediate-Concepts"><a href="#Intermediate-Concepts" class="headerlink" title="Intermediate Concepts"></a>Intermediate Concepts</h3><p>The communication strategy for different networks within ROS2 is DDS. In DDS, in order to have different logical networks share a physical network is known as the Domain ID. We can regard each program running in ROS2 as a ROS2 node. And those ROS2 nodes which are in the same domain can freely discover and send messages to each other, while ROS2 nodes on different domains cannot. </p>
+<p>The default value of Domain ID is 0, while is can also be reset manually. There are 2 versions of domain ID, i.e. short version and long version. </p>
+]]></content>
+      <tags>
+        <tag>ROS</tag>
+      </tags>
+  </entry>
 </search>

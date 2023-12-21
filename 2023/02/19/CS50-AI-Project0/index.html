@@ -53,17 +53,320 @@
         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <meta name="generator" content="Hexo 6.3.0"></head>
 <body>
-    <script type="text/javascript" charset="utf-8"  src="https://files.cnblogs.com/files/liuzhou1/L2Dwidget.0.min.js"></script>
-    <script type="text/javascript" charset="utf-8"  src="https://files.cnblogs.com/files/liuzhou1/L2Dwidget.min.js"></script>
-    <script type="text/javascript">
-        L2Dwidget.init({"display": {
-            "superSample": 2,
-            "width": 200,
-            "height": 400,
-                "position": "right",
-                    "hOffset": 0,
-            "vOffset": 0
-            }
-        });
-</script>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>Wait For a Moment...</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>跬步千里</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solidj fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;跬步千里</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solidj fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>CS50 AI Project0</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/2/19
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/Artificial-Intelligence/" style="color: #00a596">Artificial Intelligence</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>These are the project tasks affiliated with Harvard CS50. <a target="_blank" rel="noopener" href="https://cs50.harvard.edu/ai/2020/">Check it out.</a></p>
+<span id="more"></span>
+
+<h2 id="Degrees"><a href="#Degrees" class="headerlink" title="Degrees"></a>Degrees</h2><p><font size="5">Task description: Write a program that determines how many <br>“degrees of separation” apart two actors are.</font></p>
+<pre><code class="shell"># for example, when gets these inputs below, results would be like that
+$ python degrees.py large
+Loading data...
+Data loaded.
+Name: Emma Watson
+Name: Jennifer Lawrence
+3 degrees of separation.
+1: Emma Watson and Brendan Gleeson starred in Harry Potter and the Order of the Phoenix
+2: Brendan Gleeson and Michael Fassbender starred in Trespass Against Us
+3: Michael Fassbender and Jennifer Lawrence starred in X-Men: First Class
+</code></pre>
+<h3 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h3><p>This problem is originated from <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Six_Degrees_of_Kevin_Bacon"> Six Degrees of Kevin Bacon</a> game, saying that anyone in Hollywood film industry can be connected to Kevin Bacon within 6 steps, where each step consists of finding a film that two actors both starred in.</p>
+<p>Actually, there maybe exist multiple ways to connect two actors, but in this problem, it just considers the shortest path. In detail, its purpose is to choose a sequence of movies with least length to connect two stars. For example, if the shortest path between Jennifer Lawrence and Tom Hanks is 2: Jennifer Lawrence is connected to Kevin Bacon by both starring in “X-Men: First Class”, and Kevin Bacon is connected to Tom Hanks by both starring in “Apollo 13”.</p>
+<blockquote>
+<h1 id="What-is-the-State-and-the-Action"><a href="#What-is-the-State-and-the-Action" class="headerlink" title="What is the State and the Action?"></a>What is the State and the Action?</h1><p>Here, each person can be regarded as a state, and a movie can be regarded as action. In other words, a movie could connect one person to another one. And the problem is to find the shortest path, so breadth-first search is the best option.</p>
+</blockquote>
+<h3 id="Understanding"><a href="#Understanding" class="headerlink" title="Understanding"></a>Understanding</h3><p><strong>Directory: Large.</strong><code>people.csv</code> Each person with a unique <code>id</code> has his <code>name</code> and <code>birth</code>. <code>stars.csv</code> Each row is a pair of a <code>person_id</code> value and <code>movie_id</code> value, indicating person with <code>person_id</code> stars in the movie with <code>movie_id</code>. <code>movies.csv</code> It contains <code>movie_id</code>, <code>titlt</code> and the <code>year</code> that the movies was released.</p>
+<p><strong>Directory: Small.</strong> The same as <code>Large</code>, but with small database.</p>
+<p><strong>degrees.py</strong> </p>
+<p>Variables:</p>
+<ul>
+<li>names(dict) | name -&gt; person_ids {maybe people have the same name}</li>
+<li>people(dict) | person_id -&gt; name, birth, movies(set)</li>
+<li>movies(dict) | movie_id -&gt; title, year, stars(set)</li>
+</ul>
+<p>Functions:</p>
+<ul>
+<li><p>load_data: loads data from <code>people.csv</code>, <code>stars.csv</code> and <code>movies.csv</code></p>
+</li>
+<li><p>main: print the result of one of the shortest path (if it has), or return None when there exists no shortest path.</p>
+</li>
+<li><p>shortest_path: returns the shortest list of (movies, person_id) pairs</p>
+</li>
+<li><p>person_id_for_name: returns person_id of the person’s name</p>
+</li>
+<li><p>neighbor_for_person: returns (movies, person_id) pairs that relates to the given person</p>
+</li>
+</ul>
+<h2 id="Use-BFS-to-find-the-shortest-path"><a href="#Use-BFS-to-find-the-shortest-path" class="headerlink" title="Use BFS to find the shortest path"></a>Use BFS to find the shortest path</h2><p>There are two points that we need to pay attention to. First, we cannot visit the node that we have visited, this is because maybe it could cause circle making this loop never end and it absolutely is not the shortest path when we revisit one node. Second, when we backtrack, the order of the result is the opposite, just reverse it.</p>
+<pre><code class="python">def shortest_path(source, target):
+    &quot;&quot;&quot;
+    Returns the shortest list of (movie_id, person_id) pairs
+    that connect the source to the target.
+
+    If no possible path, returns None.
+    &quot;&quot;&quot;
+    Q = QueueFrontier()
+    root = Node(state=source, parent=None, action=None)
+    target_leave = Node(state=None, parent=None, action=None)
+    Q.add(root)
+
+    _find = False
+    path = list()
+    unordered_map = dict()
+    while (not Q.empty()) and (not _find):
+        top_Node = Q.remove()
+        if top_Node.state not in unordered_map:
+            unordered_map[top_Node.state] = 1
+        # find the top node&#39;s neighbors
+        neighbors = neighbors_for_person(top_Node.state)
+        for neighbor in neighbors:
+            movie_id, person_id = neighbor
+            if person_id not in unordered_map:
+                child = Node(state=person_id, parent=top_Node, action=movie_id)
+                if (child.state == target):
+                    target_leave = child
+                    _find = True
+                    break
+                Q.add(child)
+    if target_leave.state == None:
+        return None
+    else:
+        while target_leave.parent != None:
+            # append (&quot;movie_title&quot;, &quot;person_name&quot;)
+            path.append((target_leave.action, target_leave.state))
+            target_leave = target_leave.parent
+    path.reverse()
+    return path
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    <div id="comment">
+        <div id="giscus-container" class="giscus"></div>
+    </div>
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 跬步千里
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Dominique Yiu
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    <script>
+        console.info("Welcome to Shawn's blog!");
+        if (!window.hasOwnProperty("ontouchstart")) {
+            let html = '<canvas id="fireworks" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 32767"></canvas><script src="https://static-argvchs.netlify.app/js/fireworks.min.js"><\/script>';
+            document.body.append(document.createRange().createContextualFragment(html));
+        }
+    </script>
+    
+    
+<script
+    src="https://giscus.app/client.js"
+    data-repo="argvchs/giscus-comments"
+    data-repo-id="R_kgDOI_uC-w"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOI_uC-84CUToF"
+    data-mapping="pathname"
+    data-strict="1"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="https://static-argvchs.netlify.app/css/giscus.css"
+    data-lang="zh-CN"
+    crossorigin
+    async
+></script>
+
+
+
+
+
+    
+
+        <script type="text/javascript"
+        color="0, 0, 0" opacity='0.5' zIndex="-1" count="150" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+        </script>
+
+
+        <div id="L2dCanvas"></div>
+        <link rel="stylesheet" href="/css/live2d.min.css">
+        <script src="https://cdn.staticfile.org/pixi.js/4.6.1/pixi.min.js"></script>
+        <script src="/js/live2d.min.js"></script>
+        <script>
+            var v = new Viewer({
+                width: 240,
+                height: 325,
+                right: "0",
+                bottom: "0",
+                basePath: "/model",
+                role: "lingbo",
+                mobile: true,
+            });
+        </script>
+        
+        <canvas id="fireworks" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 32767"></canvas>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+        <script src="/js/fireworks.min.js"></script>
+</body>
 </html>

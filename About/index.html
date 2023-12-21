@@ -53,17 +53,250 @@
         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <meta name="generator" content="Hexo 6.3.0"></head>
 <body>
-    <script type="text/javascript" charset="utf-8"  src="https://files.cnblogs.com/files/liuzhou1/L2Dwidget.0.min.js"></script>
-    <script type="text/javascript" charset="utf-8"  src="https://files.cnblogs.com/files/liuzhou1/L2Dwidget.min.js"></script>
-    <script type="text/javascript">
-        L2Dwidget.init({"display": {
-            "superSample": 2,
-            "width": 200,
-            "height": 400,
-                "position": "right",
-                    "hOffset": 0,
-            "vOffset": 0
-            }
-        });
-</script>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>Wait For a Moment...</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>跬步千里</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solidj fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;跬步千里</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solidj fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>About</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/2/1
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p><a href="mailto:y1611440536@163.com">y1611440536@163.com</a>  15779622896  <a target="_blank" rel="noopener" href="https://dominique-yiu.netlify.app/">https://dominique-yiu.netlify.app/</a></p>
+<h2 id="Education-Background"><a href="#Education-Background" class="headerlink" title="Education Background"></a>Education Background</h2><p><strong>Hunan University (HNU)     Senior Student |Information Security            2019&#x2F;09 – Now</strong>     </p>
+<p>l <strong>GPA:</strong> 3.75&#x2F;4.0 (1&#x2F;42) | First-class Scholarship and Merit Student of HNU | TOEFL: 99 (R28 L23 S19 W29)</p>
+<p>l <strong>Honors and Awards:</strong> Certificate of Computer Software Copyright Procedures, COMAP’s Mathematical Contest in Modeling「Meritorious Winner」, National College Student Information Security Competition「Second Prize」, MathorCup College Mathematical Modeling Contest「Second Prize」, Electronic Systems Engineering Skills Competition「Merit Award」, Mathematical Modeling Competition「Second Prize」, ACM Programming Competition「Third Prize」</p>
+<h2 id="Project-Experience"><a href="#Project-Experience" class="headerlink" title="Project Experience"></a>Project Experience</h2><p><strong>Differential privacy Link Prediction Based on Matric Factorization | Personal 2022&#x2F;10 - Now</strong></p>
+<p>l The privacy data stored in Graphs may lead to the leakage of sensitive information, which brings negative impacts to users. This privacy protection strategy is proposed to prevent this scenario from happening.</p>
+<p>l Implemented Link Prediction via Matrix Factorization combined with differential privacy perturbation mechanism. Designed the privacy budget allocation optimization algorithm according to the utility function.</p>
+<p><strong>Integrated Academic Management Information System | Front-end Developer2022&#x2F;05 – 2022&#x2F;06</strong></p>
+<p>l The front end of the system uses VUE, and the back end uses Spring Boot framework to connect MySQL database, realizing information management and security protection like data&#x2F;authority security.</p>
+<p>l Used PowerDesigner to design the conceptual model of the database, mainly responsible for the design of the front-end interface and the logic design of the interaction with the back end. </p>
+<p><strong>Retro Integrated Mini-Game System Based on BSP Programming | Personal                     2021&#x2F;07 – 2021&#x2F;08</strong></p>
+<p>l Based on the STC15F2K60S2 chip, the system is designed using C language through Keli C51, including three small games: <em>Jumping</em>, <em>rhythm master</em> and <em>2 Player Battle</em>.</p>
+<p>l Adopted modular programming to realize data transmission and reception between different development boards. Considered hardware characteristics to optimize the program to achieve the best.</p>
+<h2 id="Research-Experience"><a href="#Research-Experience" class="headerlink" title="Research Experience"></a>Research Experience</h2><p> <strong>A Universal Authentication Method for Heterogeneous IoT Devices          2021&#x2F;12 – 2022&#x2F;08</strong></p>
+<p>l Proposed a novel user authentication method that exploits the electromagnetic emanations radiated from IoT devices, which extracts identity information from electromagnetic field representation during interaction with IoT.</p>
+<p>l Responsible for the interface design of the mobile device (M5StickC Plus) and the workflow design of the back-end server</p>
+<p><strong>Research on Exemplar-Based Colorization Tuned by Image Inpainting                      2021&#x2F;09 – 2022&#x2F;06</strong></p>
+<p>l Proposed a new method of colorization, which adds Image Inpainting Module to Exemplar-Based Model. This module used pre-trained parameters to restore randomly masked images, optimizing the original Colorization Network.</p>
+<p>l Obtained a deep understanding of the most advanced technologies and methods of colorization, and exceptional insight into image processing via deep learning.</p>
+<p><strong>Botnet Detection Method Based on Generative Adversarial Network 2021&#x2F;03 – 2021&#x2F;06</strong></p>
+<p>l Improved the detection accuracy and better solves the problems of strong concealment and difficult identification of botnets.</p>
+<p>l Responsible for model construction and model training. This model extracted characteristics in the time and the space dimension, and then botnet feature samples were produced. Finally, the detection model was proposed with deep learning.</p>
+<h2 id="Technical-Skills"><a href="#Technical-Skills" class="headerlink" title="Technical Skills"></a>Technical Skills</h2><p>l Good C&#x2F;C++&#x2F;Python&#x2F;VHDL&#x2F;MATLAB programming skills and solid knowledge of Pytorch. Some knowledge of Java back-end development, JavaScript front-end development, and databases like MySQL and MongoDB.</p>
+<p>l Some experience in embedded development projects, and a strong interest in robotics </p>
+<p>l Familiar with using Windows and Linux. Basic knowledge of Operating System.</p>
+<p>l Others: Visual Studio Code, MobaXterm, Adobe Premiere Pro, Keli C51, Git, Node, OpenCV, Docker, etc.</p>
+
+    </div>
+    
+    
+    
+    
+    <div id="comment">
+        <div id="giscus-container" class="giscus"></div>
+    </div>
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 跬步千里
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Dominique Yiu
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    <script>
+        console.info("Welcome to Shawn's blog!");
+        if (!window.hasOwnProperty("ontouchstart")) {
+            let html = '<canvas id="fireworks" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 32767"></canvas><script src="https://static-argvchs.netlify.app/js/fireworks.min.js"><\/script>';
+            document.body.append(document.createRange().createContextualFragment(html));
+        }
+    </script>
+    
+    
+<script
+    src="https://giscus.app/client.js"
+    data-repo="argvchs/giscus-comments"
+    data-repo-id="R_kgDOI_uC-w"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOI_uC-84CUToF"
+    data-mapping="pathname"
+    data-strict="1"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="https://static-argvchs.netlify.app/css/giscus.css"
+    data-lang="zh-CN"
+    crossorigin
+    async
+></script>
+
+
+
+
+
+    
+
+        <script type="text/javascript"
+        color="0, 0, 0" opacity='0.5' zIndex="-1" count="150" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+        </script>
+
+
+        <div id="L2dCanvas"></div>
+        <link rel="stylesheet" href="/css/live2d.min.css">
+        <script src="https://cdn.staticfile.org/pixi.js/4.6.1/pixi.min.js"></script>
+        <script src="/js/live2d.min.js"></script>
+        <script>
+            var v = new Viewer({
+                width: 240,
+                height: 325,
+                right: "0",
+                bottom: "0",
+                basePath: "/model",
+                role: "lingbo",
+                mobile: true,
+            });
+        </script>
+        
+        <canvas id="fireworks" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 32767"></canvas>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+        <script src="/js/fireworks.min.js"></script>
+</body>
 </html>

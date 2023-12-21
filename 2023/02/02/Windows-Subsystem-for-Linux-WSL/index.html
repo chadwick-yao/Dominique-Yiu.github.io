@@ -53,17 +53,294 @@
         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <meta name="generator" content="Hexo 6.3.0"></head>
 <body>
-    <script type="text/javascript" charset="utf-8"  src="https://files.cnblogs.com/files/liuzhou1/L2Dwidget.0.min.js"></script>
-    <script type="text/javascript" charset="utf-8"  src="https://files.cnblogs.com/files/liuzhou1/L2Dwidget.min.js"></script>
-    <script type="text/javascript">
-        L2Dwidget.init({"display": {
-            "superSample": 2,
-            "width": 200,
-            "height": 400,
-                "position": "right",
-                    "hOffset": 0,
-            "vOffset": 0
-            }
-        });
-</script>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>Wait For a Moment...</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>跬步千里</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solidj fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;跬步千里</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solidj fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>Windows Subsystem for Linux (WSL)</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/2/2
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/WSL/" style="color: #03a9f4">WSL</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>The Windows Subsystem for Linux provides developers a platform to run a GNU&#x2F;Linux environment directly on Windows, including most command-line tools, utilities, and applications, without the overhead of a traditional virtual machine or dualboot setup.</p>
+<span id="more"></span>
+
+<h1 id="Windows-Subsystem-for-Linux-WSL"><a href="#Windows-Subsystem-for-Linux-WSL" class="headerlink" title="Windows Subsystem for Linux (WSL)"></a>Windows Subsystem for Linux (WSL)</h1><h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><h3 id="What-is-WSL"><a href="#What-is-WSL" class="headerlink" title="What is WSL?"></a>What is WSL?</h3><p>The <strong>Windows Subsystem for Linux</strong> provides developers a platform to run a <strong>GNU&#x2F;Linux environment</strong> directly on Windows, including most command-line tools, utilities, and applications, <strong>without</strong> the overhead of a traditional <strong>virtual machine</strong> or <strong>dualboot setup</strong>.</p>
+<ul>
+<li><p>Invoke Windows application using a Unix-like command-line shell.</p>
+</li>
+<li><p>Invoke GNU&#x2F;Linux application on Windows.</p>
+</li>
+<li><p>Run GNU&#x2F;Linux graphical application integrated directly to your Windows desktop.</p>
+</li>
+<li><p>Use GPU acceleration for machine learning, data science scenarios and more.</p>
+</li>
+</ul>
+<h3 id="Comparing-WSL-versions"><a href="#Comparing-WSL-versions" class="headerlink" title="Comparing WSL versions"></a>Comparing WSL versions</h3><p>WSL 2 is a new version of the WSL architecture that powers the WSL to run ELF64 Linux binaries on Windows. Its primary goals are to <strong>increase file system performance</strong>, as well as <strong>adding full system call compatibility</strong>. This new architecture changes how these Linux binaries interact with Windows and computer’s hardware, benefiting from running a real Linux kernel.</p>
+<p>The primary differences between WSL 1 and WSL 2 are the use of an actual Linux kernel inside a managed VM, support for full system call compatibility, and performance across the Linux and Windows operating system.</p>
+<p><img src="/2023/02/02/Windows-Subsystem-for-Linux-WSL/image-20230119141625312.png" alt="image-20230119141625312"></p>
+<blockquote>
+<h4 id="WSL-2-Architecture"><a href="#WSL-2-Architecture" class="headerlink" title="WSL 2 Architecture"></a><strong>WSL 2 Architecture</strong></h4><p>A traditional VM experience can be slow to boot up, is isolated, consumes a lot of resources, and requires your time to manage it. However, WSL 2 provides the benefits of WSL 1, including seamless integration between Windows and Linux, fast boot time, small resource consumption, and requires no VM configuration or management. While <strong>WSL 2 does use a VM</strong>, it is managed and run behind the scenes, leaving you with the same user experiences WSL 1.</p>
+<h4 id="Full-Linux-Kernel"><a href="#Full-Linux-Kernel" class="headerlink" title="Full Linux Kernel"></a><strong>Full Linux Kernel</strong></h4><p>The Linux kernel in WSL 2 is built by Microsoft from the latest stable branch, based on the source available at kernel.org. This kernel has been specially tuned for WSL 2, optimizing for <strong>size and performance</strong> to provide an amazing Linux experience on Windows.</p>
+<h4 id="Increased-file-IO-performance"><a href="#Increased-file-IO-performance" class="headerlink" title="Increased file IO performance"></a><strong>Increased file IO performance</strong></h4><p>File intensive operations like git clone, npm install, apt update, and more are all noticeably faster with WSL 2. The actual speed increase will depend on which ap you’re running and how it is interacting with the file system.</p>
+<h4 id="Full-system-call-compatibility"><a href="#Full-system-call-compatibility" class="headerlink" title="Full system call compatibility"></a><strong>Full system call compatibility</strong></h4><p>Linux binaries use system calls to perform functions such as accessing file, requesting memory, creating processes, and more. Whereas WSL 1 used a translation layer that was built by the WSL team, <strong>WSL 2 includes its own Linux kernel with full system call compatibility</strong>. </p>
+</blockquote>
+<h3 id="Basic-wsl-commands"><a href="#Basic-wsl-commands" class="headerlink" title="Basic wsl commands"></a>Basic wsl commands</h3><pre><code class="shell">wsl --help
+</code></pre>
+<h3 id="Get-started-with-Git"><a href="#Get-started-with-Git" class="headerlink" title="Get started with Git"></a>Get started with Git</h3><ol>
+<li><p><strong>Git Credential Manager setup</strong></p>
+<p>GCM is a secure GIt credential helper built on .NET that can be used with both WSL 1 and WSL 2. It enables multi-factor authentication support for GitHub repos, Azure DevOps, Azure DevOps Server, and Bitbucket. Once you’re authenticated to your hosting provider, requests a new authentication token, It then <strong>stores the token in the GCM</strong>. After the first time, you can use GIt to talk to your hosting provider without needing to re-authenticate.</p>
+</li>
+</ol>
+<pre><code class="bash"># if GIt installed is &gt;= v2.36.1
+git config --global credential.helper &quot;/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager-core.exe&quot;
+# else if version is &lt; v2.36.1 enter this command:
+git config --global credential.helper &quot;/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe&quot;
+</code></pre>
+<blockquote>
+<h4 id="Proxy-settings-are-unique-to-the-specific-WSL-installation-and-not-shared-with-others-or-the-Windows-host"><a href="#Proxy-settings-are-unique-to-the-specific-WSL-installation-and-not-shared-with-others-or-the-Windows-host" class="headerlink" title="Proxy settings are unique to the specific WSL installation and not shared with others or the Windows host."></a>Proxy settings are unique to the specific WSL installation and not shared with others or the Windows host.</h4></blockquote>
+<ol start="2">
+<li><p><strong>Connect to GitHub with Secure Shell Protocol (SSH)</strong></p>
+<ol>
+<li><p><strong>About SSH.</strong> With SSH protocol, you can connect and authenticate to remote servers and services. With SSH keys, you do not need to provide your username and personal access token at each visit. You can also use an SSH key to sign commits. When you set up SSH, you will need to generate <strong>a new private SSH key</strong> and add it to the SSH agent. You must also add <strong>the public SSH key</strong> to your account on GitHub before you use the key to authenticate or sign commits.</p>
+</li>
+<li><p><strong>Checking for existing SSH keys.</strong> Before you generate a new SSH key, you should check your local machine for existing keys. Just Enter <code>ls -al ~/.ssh</code> to see if existing any SSH key at present. If you see an existing public and private key pair listed, you would like to use to connect to GitHub, and add the key to the ssh-agent.</p>
+</li>
+<li><p><strong>Generating a new SSH key and adding it to the ssh-agent.</strong> You can generate a new SSH key on your local machine. After you generate the key, you can add the key to your account on GitHub.com to enable authentication for GIt operations over SSH. Paste <code>ssh-keygen -t ed25519 -C &quot;your_email@example.com&quot;</code> then create a new SSH key. If you don’t have extra requirements (specific file location or passphrase, etc.), press Enter to the end.</p>
+<p>Before adding a new SSH key to the ssh-agent to manage your keys, you should have checked for existing SSH keys and generated a new SSH key. First, ensure the ssh-agent is running. <code>eval &quot;$(ssh-agent -s)&quot;</code> Second, add your SSH private key to the ssh-agent. If you created your key with a different name, or if you are adding an existing key that has a different name, replace <em>id_ed25519</em> in the command with the name of your private key file. Finally, add the SSH key to your account on GitHub.</p>
+<p><strong>If you are using macOS or Linux,</strong> you may need to update your SSH client or install a new SSH client prior to generating a new SSH key.</p>
+</li>
+<li><p><strong>Adding a new SSH key to your GitHub account.</strong> After you generate an SSH key pair, you must add the public key to GitHUb.com to enable SSH access for your account.</p>
+</li>
+<li><p><strong>Testing your SSH connection.</strong> </p>
+</li>
+<li><p><strong>Working with SSH key passphrases.</strong> You can secure your SSH keys configure an authentication agent so that you won’t have to reenter your passphrases every time your use your SSH keys.</p>
+</li>
+</ol>
+</li>
+</ol>
+
+    </div>
+    
+    
+    
+    
+    <div id="comment">
+        <div id="giscus-container" class="giscus"></div>
+    </div>
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 跬步千里
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Dominique Yiu
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    <script>
+        console.info("Welcome to Shawn's blog!");
+        if (!window.hasOwnProperty("ontouchstart")) {
+            let html = '<canvas id="fireworks" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 32767"></canvas><script src="https://static-argvchs.netlify.app/js/fireworks.min.js"><\/script>';
+            document.body.append(document.createRange().createContextualFragment(html));
+        }
+    </script>
+    
+    
+<script
+    src="https://giscus.app/client.js"
+    data-repo="argvchs/giscus-comments"
+    data-repo-id="R_kgDOI_uC-w"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOI_uC-84CUToF"
+    data-mapping="pathname"
+    data-strict="1"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="https://static-argvchs.netlify.app/css/giscus.css"
+    data-lang="zh-CN"
+    crossorigin
+    async
+></script>
+
+
+
+
+
+    
+
+        <script type="text/javascript"
+        color="0, 0, 0" opacity='0.5' zIndex="-1" count="150" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+        </script>
+
+
+        <div id="L2dCanvas"></div>
+        <link rel="stylesheet" href="/css/live2d.min.css">
+        <script src="https://cdn.staticfile.org/pixi.js/4.6.1/pixi.min.js"></script>
+        <script src="/js/live2d.min.js"></script>
+        <script>
+            var v = new Viewer({
+                width: 240,
+                height: 325,
+                right: "0",
+                bottom: "0",
+                basePath: "/model",
+                role: "lingbo",
+                mobile: true,
+            });
+        </script>
+        
+        <canvas id="fireworks" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 32767"></canvas>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+        <script src="/js/fireworks.min.js"></script>
+</body>
 </html>

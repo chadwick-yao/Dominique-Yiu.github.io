@@ -53,17 +53,295 @@
         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <meta name="generator" content="Hexo 6.3.0"></head>
 <body>
-    <script type="text/javascript" charset="utf-8"  src="https://files.cnblogs.com/files/liuzhou1/L2Dwidget.0.min.js"></script>
-    <script type="text/javascript" charset="utf-8"  src="https://files.cnblogs.com/files/liuzhou1/L2Dwidget.min.js"></script>
-    <script type="text/javascript">
-        L2Dwidget.init({"display": {
-            "superSample": 2,
-            "width": 200,
-            "height": 400,
-                "position": "right",
-                    "hOffset": 0,
-            "vOffset": 0
-            }
-        });
-</script>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>Wait For a Moment...</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>跬步千里</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solidj fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;跬步千里</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solidj fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>Anaconda Instructions</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/2/2
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/Anaconda/" style="color: #ff7d73">Anaconda</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>Conda is an open-source package and environment management system that runs on Windows, macOS, and Linux. Conda quickly installs, runs, and updates packages and their dependencies. It also easily creates, saves, loads, and switches between environments on your local computer. It was created for Python programs, but it can package and distribute software for any language.</p>
+<span id="more"></span>
+
+<h1 id="Anaconda-Instructions"><a href="#Anaconda-Instructions" class="headerlink" title="Anaconda Instructions"></a>Anaconda Instructions</h1><h2 id="Configure-your-environment-with-‘conda’"><a href="#Configure-your-environment-with-‘conda’" class="headerlink" title="Configure your environment with ‘conda’"></a>Configure your environment with ‘conda’</h2><h3 id="Create-a-new-environment"><a href="#Create-a-new-environment" class="headerlink" title="Create a new environment"></a>Create a new environment</h3><ol>
+<li>Create an environment without additional packages.</li>
+</ol>
+<pre><code class="bash">conda create -n &lt;env_name&gt;
+</code></pre>
+<ol start="2">
+<li>An environment with additional packages.</li>
+</ol>
+<pre><code class="bash">conda create -n &lt;env_name&gt; &lt;package_1&gt; &lt;package_2&gt;
+</code></pre>
+<h3 id="Activate-x2F-Deactivate-the-new-environment"><a href="#Activate-x2F-Deactivate-the-new-environment" class="headerlink" title="Activate&#x2F;Deactivate the new environment"></a>Activate&#x2F;Deactivate the new environment</h3><ol>
+<li>Activate</li>
+</ol>
+<pre><code class="bash">conda activate &lt;env_name&gt;
+</code></pre>
+<ol start="2">
+<li>Install many packages with a single line</li>
+</ol>
+<pre><code class="bash">conda install &lt;package_1&gt; &lt;package_2&gt; &lt;package_3&gt; ...
+</code></pre>
+<ol start="2">
+<li>Deactivate</li>
+</ol>
+<pre><code class="bash">conda deactivate
+</code></pre>
+<h2 id="View-information"><a href="#View-information" class="headerlink" title="View information"></a>View information</h2><ol>
+<li>Show environments information</li>
+</ol>
+<pre><code class="bash">conda env list
+</code></pre>
+<ol start="2">
+<li>Show a list of packages in the environment</li>
+</ol>
+<pre><code>conda list
+</code></pre>
+<h2 id="Rename-a-environment"><a href="#Rename-a-environment" class="headerlink" title="Rename a environment"></a>Rename a environment</h2><ol>
+<li>Clone the old environment</li>
+</ol>
+<pre><code class="bash">conda create -n &lt;new_env&gt; --clone &lt;old_env&gt;
+</code></pre>
+<ol start="2">
+<li>Remove the old environment</li>
+</ol>
+<pre><code class="bash">conda remove -n &lt;old_name&gt; --all
+</code></pre>
+<h2 id="Share-environment"><a href="#Share-environment" class="headerlink" title="Share environment"></a>Share environment</h2><ol>
+<li>Export existent environment</li>
+</ol>
+<pre><code class="bash">conda env export &gt; &lt;default.yml&gt;
+</code></pre>
+<ol start="2">
+<li>Recreate a new environment</li>
+</ol>
+<pre><code class="bash">conda env create -f &lt;default.yml&gt; -n &lt;env_name&gt;
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    <div id="comment">
+        <div id="giscus-container" class="giscus"></div>
+    </div>
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 跬步千里
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Dominique Yiu
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    <script>
+        console.info("Welcome to Shawn's blog!");
+        if (!window.hasOwnProperty("ontouchstart")) {
+            let html = '<canvas id="fireworks" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 32767"></canvas><script src="https://static-argvchs.netlify.app/js/fireworks.min.js"><\/script>';
+            document.body.append(document.createRange().createContextualFragment(html));
+        }
+    </script>
+    
+    
+<script
+    src="https://giscus.app/client.js"
+    data-repo="argvchs/giscus-comments"
+    data-repo-id="R_kgDOI_uC-w"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOI_uC-84CUToF"
+    data-mapping="pathname"
+    data-strict="1"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="https://static-argvchs.netlify.app/css/giscus.css"
+    data-lang="zh-CN"
+    crossorigin
+    async
+></script>
+
+
+
+
+
+    
+
+        <script type="text/javascript"
+        color="0, 0, 0" opacity='0.5' zIndex="-1" count="150" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+        </script>
+
+
+        <div id="L2dCanvas"></div>
+        <link rel="stylesheet" href="/css/live2d.min.css">
+        <script src="https://cdn.staticfile.org/pixi.js/4.6.1/pixi.min.js"></script>
+        <script src="/js/live2d.min.js"></script>
+        <script>
+            var v = new Viewer({
+                width: 240,
+                height: 325,
+                right: "0",
+                bottom: "0",
+                basePath: "/model",
+                role: "lingbo",
+                mobile: true,
+            });
+        </script>
+        
+        <canvas id="fireworks" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 32767"></canvas>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+        <script src="/js/fireworks.min.js"></script>
+</body>
 </html>

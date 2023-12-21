@@ -173,7 +173,7 @@
         
         
         <span>
-            <a href="/tags/CMake/" style="background: #00a596">
+            <a href="/tags/CMake/" style="background: #00bcd4">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -184,7 +184,7 @@
         
         
         <span>
-            <a href="/tags/Algorithm/" style="background: #00bcd4">
+            <a href="/tags/Algorithm/" style="background: #ffa2c4">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -195,7 +195,7 @@
         
         
         <span>
-            <a href="/tags/WSL/" style="background: #00a596">
+            <a href="/tags/WSL/" style="background: #ff7d73">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -206,7 +206,7 @@
         
         
         <span>
-            <a href="/tags/Artificial-Intelligence/" style="background: #03a9f4">
+            <a href="/tags/Artificial-Intelligence/" style="background: #00a596">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -217,7 +217,7 @@
         
         
         <span>
-            <a href="/tags/Merge-Sort/" style="background: #00bcd4">
+            <a href="/tags/Merge-Sort/" style="background: #ff7d73">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -228,7 +228,7 @@
         
         
         <span>
-            <a href="/tags/Imitation-Learning/" style="background: #ffa2c4">
+            <a href="/tags/Imitation-Learning/" style="background: #00bcd4">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -239,7 +239,7 @@
         
         
         <span>
-            <a href="/tags/Reinforcement-Learning/" style="background: #00a596">
+            <a href="/tags/Reinforcement-Learning/" style="background: #03a9f4">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -250,7 +250,7 @@
         
         
         <span>
-            <a href="/tags/ROS/" style="background: #00bcd4">
+            <a href="/tags/ROS/" style="background: #00a596">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -279,7 +279,7 @@
                     
                     <span class="tag">
                         
-                        <a href="/tags/Anaconda/" style="color: #00a596">Anaconda</a>
+                        <a href="/tags/Anaconda/" style="color: #ff7d73">Anaconda</a>
                     </span>
                     
                 </span>
@@ -332,20 +332,20 @@
         </script>
 
 
-        <div id="L2dCanvas"></div>
-        <link rel="stylesheet" href="/css/live2d.min.css">
-        <script src="https://cdn.staticfile.org/pixi.js/4.6.1/pixi.min.js"></script>
-        <script src="/js/live2d.min.js"></script>
+        <script type="text/javascript" charset="utf-8"  src="https://files.cnblogs.com/files/liuzhou1/L2Dwidget.0.min.js"></script>
+        <script type="text/javascript" charset="utf-8"  src="https://files.cnblogs.com/files/liuzhou1/L2Dwidget.min.js"></script>
         <script>
-            var v = new Viewer({
-                width: 240,
-                height: 325,
-                right: "0",
-                bottom: "0",
-                basePath: "/model",
-                role: "lingbo",
-                mobile: true,
+            $('#newblog-container').load(/*[[@{/footer/newblog}]]*/"/footer/newblog");
+            L2Dwidget.init({"display": {
+                    "superSample": 2,
+                    "width": 200,
+                    "height": 400,
+                    "position": "right",
+                    "hOffset": 0,
+                    "vOffset": 0
+                }
             });
+
         </script>
         
         <canvas id="fireworks" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 32767"></canvas>

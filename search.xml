@@ -1382,4 +1382,35 @@ variance = (self._get_variance(t, predicted_variance=predicted_variance) ** 0.5)
         <tag>ROS</tag>
       </tags>
   </entry>
+  <entry>
+    <title>ORBIT-NVIDIA</title>
+    <url>/2023/12/28/ORBIT-NVIDIA/</url>
+    <content><![CDATA[<p>This is about my reproduction of ORBIT from NVIDIA. ORBIT is a framework for robot learning (such as RL and LfD). It leverages the latest simulation capabilities for phote-realistic scenes and fast and accurate simulation.</p>
+<span id="more"></span>
+
+<h2 id="Rep-Organization"><a href="#Rep-Organization" class="headerlink" title="Rep Organization"></a>Rep Organization</h2><p><code>ORBIT</code> repository structure is as follows:</p>
+<pre><code class="shell">orbit
+├── .vscode
+├── .flake8
+├── LICENSE
+├── orbit.sh
+├── pyproject.toml
+├── README.md
+├── docs
+├── source
+│   ├── extensions
+│   │   ├── omni.isaac.orbit
+│   │   └── omni.isaac.orbit_tasks
+│   │   └── omni.isaac.contrib_tasks
+│   ├── standalone
+│   │   ├── demos
+│   │   ├── environments
+│   │   ├── tools
+│   │   ├── tutorials
+│   │   └── workflows
+└── VERSION
+</code></pre>
+<p>There are 2 different development workflows supported in Isaac Sim:</p>
+<h3 id="Extension"><a href="#Extension" class="headerlink" title="Extension"></a>Extension</h3>]]></content>
+  </entry>
 </search>

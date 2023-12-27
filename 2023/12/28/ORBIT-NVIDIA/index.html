@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Tags: WSL | 跬步千里</title>
+    <title>ORBIT-NVIDIA | 跬步千里</title>
     <meta name="author" content="Dominique Yiu" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -36,6 +36,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -153,140 +157,60 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
-        
-        
-        
-        <span>
-            <a href="/tags/Anaconda/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                Anaconda
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/CMake/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                CMake
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/Algorithm/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                Algorithm
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/WSL/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                WSL
-            </a>
-        </span>
-        
-        
-        
-        
-        
-        <span>
-            <a href="/tags/Artificial-Intelligence/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                Artificial Intelligence
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/Merge-Sort/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                Merge Sort
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/Imitation-Learning/" style="background: #00bcd4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                Imitation Learning
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/Reinforcement-Learning/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                Reinforcement Learning
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/ROS/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                ROS
-            </a>
+            <div class="article">
+    <div>
+        <h1>ORBIT-NVIDIA</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/28
         </span>
         
         
     </div>
     
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2023/2/2</div>
-            <a href="/2023/02/02/Windows-Subsystem-for-Linux-WSL/">
-                <h3>Windows Subsystem for Linux (WSL)</h3>
-            </a>
-            <div class="info">
-                
-                
-                <span class="tags">
-                    <span class="icon">
-                        <i class="fa-solid fa-tags fa-fw"></i>
-                    </span>
-                    
-                    
-                    <span class="tag">
-                        
-                        <a href="/tags/WSL/" style="color: #03a9f4">WSL</a>
-                    </span>
-                    
-                </span>
-                
-            </div>
-        </div>
+    <div class="content" v-pre>
+        <p>This is about my reproduction of ORBIT from NVIDIA. ORBIT is a framework for robot learning (such as RL and LfD). It leverages the latest simulation capabilities for phote-realistic scenes and fast and accurate simulation.</p>
+<span id="more"></span>
+
+<h2 id="Rep-Organization"><a href="#Rep-Organization" class="headerlink" title="Rep Organization"></a>Rep Organization</h2><p><code>ORBIT</code> repository structure is as follows:</p>
+<pre><code class="shell">orbit
+├── .vscode
+├── .flake8
+├── LICENSE
+├── orbit.sh
+├── pyproject.toml
+├── README.md
+├── docs
+├── source
+│   ├── extensions
+│   │   ├── omni.isaac.orbit
+│   │   └── omni.isaac.orbit_tasks
+│   │   └── omni.isaac.contrib_tasks
+│   ├── standalone
+│   │   ├── demos
+│   │   ├── environments
+│   │   ├── tools
+│   │   ├── tutorials
+│   │   └── workflows
+└── VERSION
+</code></pre>
+<p>There are 2 different development workflows supported in Isaac Sim:</p>
+<h3 id="Extension"><a href="#Extension" class="headerlink" title="Extension"></a>Extension</h3>
     </div>
+    
+    
+    
+    
+    <div id="comment">
+        <div id="giscus-container" class="giscus"></div>
+    </div>
+    
+    
+    
     
 </div>
 
@@ -325,6 +249,29 @@
             document.body.append(document.createRange().createContextualFragment(html));
         }
     </script>
+    
+    
+<script
+    src="https://giscus.app/client.js"
+    data-repo="argvchs/giscus-comments"
+    data-repo-id="R_kgDOI_uC-w"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOI_uC-84CUToF"
+    data-mapping="pathname"
+    data-strict="1"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="https://static-argvchs.netlify.app/css/giscus.css"
+    data-lang="zh-CN"
+    crossorigin
+    async
+></script>
+
+
+
+
+
     
 
         <script type="text/javascript"

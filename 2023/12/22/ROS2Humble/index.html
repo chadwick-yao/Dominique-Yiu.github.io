@@ -178,7 +178,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/ROS/" style="color: #ff7d73">ROS</a>
+                <a href="/tags/ROS/" style="color: #ffa2c4">ROS</a>
             </span>
             
         </span>
@@ -191,6 +191,20 @@
 
 <h2 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h2><h3 id="Intermediate-Concepts"><a href="#Intermediate-Concepts" class="headerlink" title="Intermediate Concepts"></a>Intermediate Concepts</h3><p>The communication strategy for different networks within ROS2 is DDS. In DDS, in order to have different logical networks share a physical network is known as the Domain ID. We can regard each program running in ROS2 as a ROS2 node. And those ROS2 nodes which are in the same domain can freely discover and send messages to each other, while ROS2 nodes on different domains cannot. </p>
 <p>The default value of Domain ID is 0, while is can also be reset manually. There are 2 versions of domain ID, i.e. short version and long version. </p>
+<h3 id="Understanding-nodes"><a href="#Understanding-nodes" class="headerlink" title="Understanding nodes"></a>Understanding nodes</h3><p>The ROS 2 graph is a network of ROS 2 elements processing data together at the same time. It encompasses all executables and the connection between them.</p>
+<p>In this graph, every single element&#x2F;executable can be regarded as a node or multiple nodes, while each node should be responsible for a single, modular purpose. Each node can send and receive data from other nodes via topics, services, actions or parameters.</p>
+<p>The command <code>ros run</code> can launch an executable from a package.</p>
+<pre><code class="shell">$ ros2 run &lt;package_name&gt; &lt;executable_name&gt;
+</code></pre>
+<p>Use the following command to check nodes that are running.</p>
+<pre><code class="shell">$ ros2 node list
+</code></pre>
+<p><strong>Remapping</strong> allows you to reassign default node properties, like node name, topic name, service name, ect, to custom values. For example, reassign the name of <code>/turtlesim</code> node:</p>
+<pre><code class="shell">$ ros2 run turtlesim turtlesim_node --ros-args --remap __node:=my_turtle
+# Return more info
+$ ros2 node info &lt;node_name&gt;
+</code></pre>
+<h3 id="Understanding-Topics"><a href="#Understanding-Topics" class="headerlink" title="Understanding Topics"></a>Understanding Topics</h3><p>Topics are a vital element of the ROS graph, which act as a but for nodes to exchange message.</p>
 
     </div>
     
@@ -210,7 +224,7 @@
     <div id="footer-wrap">
         <div>
             &copy;
-            2022 - 2023 跬步千里
+            2022 - 2024 跬步千里
             <span id="footer-icon">
                 <i class="fa-solid fa-font-awesome fa-fw"></i>
             </span>
